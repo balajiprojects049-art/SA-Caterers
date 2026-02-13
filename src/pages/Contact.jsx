@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, ChefHat, Utensils, Coffee } from 'lucide-react';
+import BackgroundTexture from '../components/BackgroundTexture';
 
 const Contact = () => {
     const handleEnquiry = (e) => {
@@ -7,35 +8,15 @@ const Contact = () => {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
 
-        const message = `*New Enquiry*\n\n*Name:* ${data.name}\n*Phone:* ${data.phone}\n*Date:* ${data.date}\n*Location:* ${data.location}\n*Type:* ${data.type}\n*Preference:* ${data.preference}\n*Time:* ${data.time}\n*Members:* ${data.members}\n*Email:* ${data.email}\n*Comments:* ${data.comments}`;
+        const message = `* New Enquiry *\n\n * Name:* ${data.name} \n * Phone:* ${data.phone} \n * Date:* ${data.date} \n * Location:* ${data.location} \n * Type:* ${data.type} \n * Preference:* ${data.preference} \n * Time:* ${data.time} \n * Members:* ${data.members} \n * Email:* ${data.email} \n * Comments:* ${data.comments} `;
 
         const url = `https://wa.me/919030927239?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     };
 
     return (
-        <div className="min-h-screen bg-[#F0F4C3] pt-24 pb-20 relative overflow-hidden">
-            {/* Background Texture - Catering Icons Pattern */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-5">
-                {[...Array(20)].map((_, i) => (
-                    <div key={i} className="absolute text-dark-green" style={{
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                        transform: `rotate(${Math.random() * 360}deg) scale(${0.5 + Math.random()})`,
-                    }}>
-                        {i % 3 === 0 ? <ChefHat size={120} /> : i % 3 === 1 ? <Utensils size={100} /> : <Coffee size={90} />}
-                    </div>
-                ))}
-            </div>
-
-            {/* Repeating Watermark Text */}
-            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none flex flex-wrap content-center justify-center gap-24 overflow-hidden select-none">
-                {[...Array(10)].map((_, i) => (
-                    <div key={i} className="text-6xl md:text-8xl font-black font-playfair -rotate-12 whitespace-nowrap text-dark-green">
-                        SA CATERERS
-                    </div>
-                ))}
-            </div>
+        <div className="min-h-screen bg-[#FAFAFA] pt-24 pb-20 relative overflow-hidden">
+            <BackgroundTexture />
 
             <div className="container mx-auto px-4 relative z-10">
 

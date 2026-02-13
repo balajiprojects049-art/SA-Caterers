@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { ChefHat, Award, Users, Utensils, Heart, Calendar, Briefcase, Home, Flame, Check, Star, ShieldCheck, Clock, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+import BackgroundTexture from '../components/BackgroundTexture';
 
 const About = () => {
     return (
-        <div className="min-h-screen bg-cream pt-24 pb-20">
-            <div className="container mx-auto px-4">
+        <div className="min-h-screen bg-[#FAFAFA] pt-24 pb-20 relative overflow-hidden">
+            <BackgroundTexture />
+            <div className="container mx-auto px-4 relative z-10">
 
                 {/* Header */}
                 <motion.div
