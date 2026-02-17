@@ -80,7 +80,7 @@ const Home = () => {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         {/* Text Content */}
-                        <div className="text-left">
+                        <div className="text-left bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-white/50">
                             <div className="mb-6 flex justify-start">
                                 <div className="w-12 h-12 rounded-full bg-luxury-gold/10 flex items-center justify-center">
                                     <Quote className="text-luxury-gold w-6 h-6" />
@@ -171,25 +171,25 @@ const Home = () => {
                                 icon: <UtensilsCrossed size={28} />,
                                 title: "Wedding Catering",
                                 desc: "Grand feasts for your special day, handled with royal precision.",
-                                img: "https://images.unsplash.com/photo-1519225468765-a6a1c4717f79?q=80&w=800&auto=format&fit=crop"
+                                img: "/Wedding Catering.png"
                             },
                             {
                                 icon: <Cake size={28} />,
                                 title: "Birthday Bashes",
                                 desc: "Delightful menus for birthdays that kids and adults adore.",
-                                img: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?q=80&w=800&auto=format&fit=crop"
+                                img: "/Birthday Bashes.png"
                             },
                             {
                                 icon: <Briefcase size={28} />,
                                 title: "Corporate Events",
                                 desc: "Professional catering services to impress your clients and team.",
-                                img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800"
+                                img: "/Corporate Events.png"
                             },
                             {
                                 icon: <Star size={28} />,
                                 title: "Outdoor Catering",
                                 desc: "Perfectly executed outdoor dining experiences, anywhere.",
-                                img: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&q=80&w=800"
+                                img: "/Outdoor Catering.png"
                             }
                         ].map((service, idx) => (
                             <motion.div
