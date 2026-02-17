@@ -17,7 +17,7 @@ const Home = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent z-10"></div>
                     <img
-                        src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2600&auto=format&fit=crop"
+                        src="/fresh-gourmet-meal-beef-taco-salad-plate-generated-by-ai.jpg"
                         alt="Royal Catering Banquet"
                         className="w-full h-full object-cover"
                     />
@@ -231,14 +231,11 @@ const Home = () => {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
                         {[
-                            { title: "Full Veg Menu", img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=600" },
-                            { title: "Full Non Veg Menu", img: "https://images.unsplash.com/photo-1596560548464-f010549b8416?auto=format&fit=crop&q=80&w=600" },
-                            { title: "Veg Below 200", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=600" },
-                            { title: "Non Veg Below 200", img: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&q=80&w=600" },
-                            { title: "Birthday Menu", img: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&q=80&w=600" },
-                            { title: "House Warming/Pooja", img: "https://images.unsplash.com/photo-1610452608404-51c3605c4883?auto=format&fit=crop&q=80&w=600" },
-                            { title: "Regular Veg Menu", img: "https://images.unsplash.com/photo-1534069818817-57842fac2e8f?auto=format&fit=crop&q=80&w=600" },
-                            { title: "Regular Non Veg Menu", img: "https://images.unsplash.com/photo-1570773950664-585d8527a20c?auto=format&fit=crop&q=80&w=600" }
+                            { title: "Full Veg Menu", img: "/Veg-Menu.png" },
+                            { title: "Full Non Veg Menu", img: "/NON-Veg.jpg" },
+                            { title: "Veg Below 200", img: "/Veg 1.png" },
+                            { title: "Non Veg Below 200", img: "/Non Veg 1.png" },
+                            //{ title: "Regular Non Veg Menu", img: "https://images.unsplash.com/photo-1570773950664-585d8527a20c?auto=format&fit=crop&q=80&w=600" }
                         ].map((menu, i) => (
                             <div key={i} className="group cursor-pointer">
                                 <div className="relative h-[280px] md:h-[350px] rounded-[2rem] overflow-hidden shadow-lg transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(255,203,101,0.3)] group-hover:ring-4 group-hover:ring-luxury-gold/50">

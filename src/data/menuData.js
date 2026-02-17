@@ -94,44 +94,7 @@ export const menuPackages = [
             { category: 'Curries', items: ['Dum Ka Chicken', 'Methi Chicken', 'Mutton Curry (Special)'] }
         ]
     },
-    {
-        id: 'birthday',
-        label: 'Birthday Menu',
-        description: 'Fun and tasty menu specifically curated for birthday parties.',
-        categories: [
-            {
-                category: 'Entertainment',
-                items: ['Tattoo Artist', 'Photo Booth', 'Spinny', 'VR Roller Coaster', 'Bubble House', 'Unique Mascots', 'Magic Show']
-            },
-            { category: 'Live Stalls', items: ['Popcorn', 'Sugar Candy', 'Live Bobatlu'] },
-            { category: 'Special Add-ons', items: ['Baby Special Entries', 'Surprise Cake Table'] }
-        ]
-    },
-    {
-        id: 'regular-veg',
-        label: 'Regular Veg Menu',
-        description: 'Standard vegetarian meals for everyday events.',
-        categories: [
-            { category: 'Welcome Juice', items: ['Strawberry Crush', 'Seasonal Juice'] },
-            { category: 'Starters', items: ['Veg Manchurian', 'Veg Rolls'] },
-            { category: 'Live Stalls', items: ['Chat Counter (Pani Puri, Cutlets)', 'Pan Counter'] },
-            { category: 'Main Course', items: ['Bagara Rice', 'Veg Biryani', 'White Rice', 'Rumali Roti'] },
-            { category: 'Curries', items: ['Butter Paneer Masala', 'Vankaya Masala', 'Cut Mirchi', 'Bhendi Fry'] },
-            { category: 'Sides', items: ['Palakura Pappu', 'Sambar', 'Roti Pachadi', 'Fryms', 'Raitha', 'Salad'] },
-            { category: 'Dessert', items: ['Khova Jamun', 'Vanilla Ice Cream'] }
-        ]
-    },
-    {
-        id: 'house-warming',
-        label: 'House Warming / Pooja',
-        description: 'Traditional menu perfect for auspicious occasions.',
-        categories: [
-            { category: 'Traditional Mains', items: ['Bagara Rice', 'White Rice', 'Pulihora'] },
-            { category: 'Curries & Dals', items: ['Sambar', 'Palakura Pappu', 'Potato Fry'] },
-            { category: 'Sweets', items: ['Khova Jamun', 'Kadu Ki Kheer', 'Laddu', 'Payasam'] },
-            { category: 'Tiffins', items: ['Idli', 'Wada', 'Dosa', 'Pongal'] }
-        ]
-    },
+
     {
         id: 'beverages-coffee',
         label: 'Coffee & Beverages',
