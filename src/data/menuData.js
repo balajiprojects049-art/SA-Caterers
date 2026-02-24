@@ -1,48 +1,63 @@
 export const menuPackages = [
     {
-        id: 'full-veg',
-        label: 'Full Veg Menu',
-        description: 'A complete vegetarian feast suitable for weddings and grand receptions.',
+        id: 'grand-wedding',
+        label: 'Grand Wedding Menu',
+        description: 'Our most comprehensive royal vegetarian spread with authentic flavors and live stalls.',
         categories: [
             {
-                category: 'Welcome Juices',
-                items: ['Fruit Punch', 'Fruit Juice', 'Badam Milk']
+                category: 'Welcome Station (Juices)',
+                items: ['Pine Apple', 'Black Grape', 'Ganga Jamuna', 'Orange', 'Water Melon', 'Fresh Lime Pudina', 'Kairi Panna', 'Guava Mint', 'Guava Prince', 'Red Mistique', 'Kiwi Delight', 'Anar', 'Jamun', 'Strawberry', 'Musk Melon', 'Sitaphal']
             },
             {
-                category: 'Crush Juices',
-                items: ['Strawberry', 'Pineapple', 'Mango', 'Litchi']
+                category: 'Milk Shakes & Fruit Punch',
+                items: ['Chike Shake', 'Strawberry Shake', 'Badam Milk', 'Green Pista', 'Anjeer Badam', 'Mango Shake', 'Orio Shake', 'Dates Shake', 'Fruit Delight', 'Black Current', 'Orange Blossom', 'Pina Colada', 'Pineapple Punch', 'Melon Surprise', 'Litchi Punch', 'Coconut Punch']
             },
             {
-                category: 'Veg Starters',
-                items: ['Breaded Manchurian', 'Spring Rolls', 'Veg Bullet', 'Cheese Balls', 'Corn Samosa', 'Crispy Veg']
+                category: 'Mithai Mela (Sweets)',
+                items: ['Gulab Jamun', 'Kaju Katli', 'Dry Fruit Sandwich', 'Carrot Halwa', 'Double Ka Mitta', 'Kesar Jalebi', 'Malpua', 'Kaju Anjeer King', 'Kaju Badam Barfi', 'Chocolate Suchi', 'Pista Sandwich', 'Doodh Gulla', 'Strawberry/Cheeku Matka', 'Sithaphal Matka', 'Butterscotch Idly', 'Mango Alaska', 'Malai Chum Chum', 'Malai Roll', 'Karachi Rasmalai', 'Tawa Rabidi Jamun', 'Dryfruit Tawa Kalakand', 'African Delight', 'Litchi Gulla', 'Chocolate Gupchup', 'Gul Bahar Santra']
             },
             {
-                category: 'Live Stalls & Counters',
-                items: [
-                    'Chat Counter: Pani Puri, Cutlets, Pav Bhaji, Dahi Wada',
-                    'Mocktail Counter: Assorted Mocktails',
-                    'Chinese: Soft Noodles, Manchurian, Paneer Tikka',
-                    'Italian: Pizza, Burger, Pasta, Garlic Bread',
-                    'Pan Counter (Sweet, Sada, Fire)',
-                    'Stone Ice Cream',
-                    'Tea & Coffee Counter'
-                ]
+                category: 'Live Chat Counter',
+                items: ['Golden Pani Poori', 'Cutlet Ragada', 'Pav Bhaji', 'Aloo Toast', 'Masala Pav Bhaji', 'Chole Kulcha', 'Malai Dhai Wada', 'Paneer Tikka', 'Lifafa Paneer', 'Corn Bhel']
             },
             {
-                category: 'Main Course',
-                items: ['Bagara Rice', 'Veg Dum Biryani', 'Thai Biryani', 'Pulav', 'Kaju Biryani']
+                category: 'Global Fusion (Italian & Mexican)',
+                items: ['Veg Sandwich', 'Cheese Sandwich', 'Garlic Bread', 'Veg Mini Burger', 'Veg Paper Pizza', 'Italian Rice', 'White Pasta', 'Red Pasta', 'Lasaniya', 'Buritos', 'Mexican Green Rice', 'Mexican Chacos', 'Takos', 'Nachos']
             },
             {
-                category: 'Curries',
-                items: ['Butter Paneer Masala', 'Malai Kofta', 'Veg Navaratna Mix', 'Chole Masala', 'Sambar', 'Palakura Pappu']
+                category: 'Special Wet Curries (Paneer & Veg)',
+                items: ['Paneer Chat-Pat', 'Shahi Paneer', 'Palak Paneer', 'Paneer Butter Masala', 'Methi Chaman Hariyali', 'Mushroom Masala', 'Mushroom Kaju', 'Ginger Mushroom', 'Palak Kofta Curry', 'Baby Corn Paneer Masala', 'Baby Corn Masala', 'Kadai Vegetable', 'Veg Jodpuri', 'Chole Paneer', 'Bul Bul Kofta', 'Meloni Sabji', 'Tawa Vegetable', 'Veg Chat Pat']
             },
             {
-                category: 'Rotis',
-                items: ['Butter Naan', 'Lacha Paratha', 'Kulcha', 'Rumali Roti', 'Phulka', 'Puri']
+                category: 'Masala Curries & Dals',
+                items: ['Bagara Baingan', 'Tomato Masala', 'Capsicum Masala', 'Alu Kurma', 'Alu Gobi Kurma', 'Alu Mutter Masala', 'Capsicum Tomato Masala', 'Bendi Masala', 'Dham Alu', 'Ginger Alu', 'Chukkakura Pappu', 'Tomato Pappu', 'Dosakaya Pappu', 'Thota Kura Pappu', 'Mamidkaya Pappu', 'Palak Dal', 'Palak Mango Dal', 'Gongura Pappu', 'Beerakaya Pappu', 'Mudda Pappu', 'Dal fry', 'Dal Makhini', 'Tadka Dal', 'Rajma Dal']
             },
             {
-                category: 'Sweets & Desserts',
-                items: ['Kadu Ki Kheer', 'Qurbani Sweet', 'Fruit Salad', 'Apricot Delight', 'Rabdi Malai']
+                category: 'Royal Rice Selection',
+                items: ['Veg Dum Biryani', 'Paneer Biryani', 'Jackfruit Biryani', 'Guthi Vankaya Biryani', 'Mushroom Biryani', 'Kofta Biryani', 'Pudina Rice', 'Jeera Rice', 'Coconut Rice', 'Kaju Pulav', 'Bagara Rice', 'Thai Biryani']
+            },
+            {
+                category: 'Indian Breads',
+                items: ['Palak Poori', 'Methi Poori', 'Butter Naan', 'Rumali Roti', 'Paneer Kulcha', 'Masala Kulcha', 'Tandoor Roti', 'Lacha Paratha', 'Phulka']
+            }
+        ]
+    },
+    {
+        id: 'breakfast-special',
+        label: 'Breakfast Station',
+        description: 'Authentic South Indian breakfast and live Dosa counters.',
+        categories: [
+            {
+                category: 'South Indian Classics',
+                items: ['Idly', 'Tawwa Idly', 'Butter Idly', 'Thata Idly', 'Idly 65', 'Button Idly', 'Kulfi Idly', 'Wada', 'Butter Wada', 'Sambhar/Rasam/Wada', 'Mysore Bonda', 'Tawwa Bonda', 'Tomato Bath', 'Bisibelabath', 'Ghee Rice Pongal', 'Poha', 'Bambino Upma', 'Poori', 'Upma']
+            },
+            {
+                category: 'Live Dosa Station',
+                items: ['Plain Dosa', 'Masala Dosa', 'Butter Dosa', 'Set Dosa', 'Pizza Dosa', 'Onion Dosa', 'Rawa Dosa', 'Sezwan Dosa', 'Paneer Butter Dosa', 'Cheese Dosa', 'Paneer Cheese Dosa', 'Ghee Karam Dosa', 'Net Dosa', 'Moong Let', 'Uttapam', 'Pesarattu']
+            },
+            {
+                category: 'Beverages',
+                items: ['Traditional Filter Coffee', 'Masala Tea', 'Irani Chai', 'Badam Milk', 'Lemon Tea']
             }
         ]
     },
@@ -92,75 +107,6 @@ export const menuPackages = [
             { category: 'Starters', items: ['Chicken Pakoda', 'Chicken 65', 'Fish Fry'] },
             { category: 'Main Course', items: ['Chicken Biryani (Special/Dum)', 'Mutton Biryani (Zafrani/Dum)'] },
             { category: 'Curries', items: ['Dum Ka Chicken', 'Methi Chicken', 'Mutton Curry (Special)'] }
-        ]
-    },
-
-    {
-        id: 'beverages-coffee',
-        label: 'Coffee & Beverages',
-        description: 'Premium handcrafted coffees, exotic teas, and rich milkshakes.',
-        categories: [
-            {
-                category: 'Hot Coffee',
-                items: [
-                    'Espresso 30ml',
-                    'Doppio 60ml',
-                    'Macchiato 40ml',
-                    'Caramel Macchiato 50ml',
-                    'Americano',
-                    'Peach Americano',
-                    'Cappuccino',
-                    'Flat White',
-                    'Cafe Latte',
-                    'Cafe Mocha'
-                ]
-            },
-            {
-                category: 'Coffee Flavours (Add-on)',
-                items: ['Vanilla', 'Caramel', 'Hazelnut', 'Irish', 'Peach']
-            },
-            {
-                category: 'Hot Chocolate',
-                items: [
-                    'Signature Hot Chocolate',
-                    'Cookie n Cream Chocolate',
-                    'Nutella Hot Chocolate',
-                    'Brownie Hot Chocolate'
-                ]
-            },
-            {
-                category: 'Cold Iced Coffee',
-                items: [
-                    'Iced Americano',
-                    'Iced Latte',
-                    'Iced Mocha',
-                    'Vietnamese Iced Latte'
-                ]
-            },
-            {
-                category: 'Cold Coffee Frappe',
-                items: [
-                    'Coffee Frappe',
-                    'Caramel Frappe',
-                    'Hazelnut Frappe',
-                    'Mocha Frappe'
-                ]
-            },
-            {
-                category: 'Ice Tea',
-                items: ['Lemon Ice Tea', 'Peach Ice Tea', 'Bubble-gum Ice Tea']
-            },
-            {
-                category: 'Milkshakes',
-                items: [
-                    'Vanilla Shake',
-                    'Chocolate Shake',
-                    'Banana Caramel Shake',
-                    'Choco Chip Shake',
-                    'Brownie Shake',
-                    'Avocado Blueberry Shake'
-                ]
-            }
         ]
     }
 ];
