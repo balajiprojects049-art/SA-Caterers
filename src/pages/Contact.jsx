@@ -42,10 +42,10 @@ const Contact = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-transparent rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.08)] mb-24 mt-16 md:mt-20 lg:mt-0 border border-gray-100 flex-col-reverse lg:flex-row relative z-20">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-transparent rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.08)] mb-24 mt-16 md:mt-20 lg:mt-0 border border-gray-100 flex-col-reverse lg:flex-row relative z-20 max-w-5xl lg:max-w-6xl mx-auto">
 
                     {/* Left Side: Contact Information (Dark Green) */}
-                    <div className="lg:col-span-2 bg-dark-green p-10 lg:p-12 text-white relative overflow-visible flex flex-col justify-between rounded-t-[3rem] lg:rounded-t-none lg:rounded-l-[3rem]">
+                    <div className="lg:col-span-2 bg-dark-green p-8 lg:p-10 text-white relative overflow-visible flex flex-col justify-between rounded-t-[3rem] lg:rounded-t-none lg:rounded-l-[3rem]">
                         <div className="relative z-10 flex flex-col flex-grow pt-48 lg:pt-60">
                             {/* Overflowing Avatar element */}
                             <div className="absolute top-12 lg:top-16 left-1/2 -translate-x-1/2 w-72 h-80 lg:w-80 lg:h-96 flex items-start justify-center z-20 pointer-events-none drop-shadow-2xl mb-12">
@@ -108,46 +108,46 @@ const Contact = () => {
                     </div>
 
                     {/* Right Side: The Form */}
-                    <div className="lg:col-span-3 p-12 lg:p-16 bg-white relative rounded-b-[3rem] lg:rounded-b-none lg:rounded-r-[3rem]">
-                        <h2 className="text-4xl font-playfair font-bold text-dark-green mb-2">Send an Enquiry</h2>
-                        <p className="text-gray-500 font-light mb-8">Fill out the details below, and we'll get back to you with a curated proposal.</p>
+                    <div className="lg:col-span-3 p-8 lg:p-10 bg-white relative rounded-b-[3rem] lg:rounded-b-none lg:rounded-r-[3rem]">
+                        <h2 className="text-3xl font-playfair font-bold text-dark-green mb-2">Send an Enquiry</h2>
+                        <p className="text-gray-500 font-light mb-6">Fill out the details below, and we'll get back to you with a curated proposal.</p>
 
                         <div className="inline-block bg-cream text-dark-green px-4 py-2 rounded-full text-sm font-medium mb-8 border border-luxury-gold/30 flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-luxury-gold"></span>
                             Note: Cleaning staff and Crockery not included by default
                         </div>
 
-                        <form onSubmit={handleEnquiry} className="space-y-6 relative z-10">
+                        <form onSubmit={handleEnquiry} className="space-y-4 relative z-10">
                             {/* Row 1 */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Full Name</label>
-                                    <input required name="name" type="text" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="John Doe" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Full Name</label>
+                                    <input required name="name" type="text" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="John Doe" />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Mobile Number</label>
-                                    <input required name="phone" type="tel" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="+91 99999 99999" />
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Mobile Number</label>
+                                    <input required name="phone" type="tel" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="+91 99999 99999" />
                                 </div>
                             </div>
 
                             {/* Row 2 */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Event Date</label>
-                                    <input required name="date" type="date" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Event Date</label>
+                                    <input required name="date" type="date" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700" />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Location</label>
-                                    <input required name="location" type="text" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="City or Venue Name" />
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Location</label>
+                                    <input required name="location" type="text" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="City or Venue Name" />
                                 </div>
                             </div>
 
                             {/* Row 3 */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Event Type</label>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Event Type</label>
                                     <div className="relative">
-                                        <select name="type" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700 appearance-none cursor-pointer">
+                                        <select name="type" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700 appearance-none cursor-pointer">
                                             <option>Wedding & Reception</option>
                                             <option>Birthday Party</option>
                                             <option>Engagement</option>
@@ -160,10 +160,10 @@ const Contact = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Dietary Preference</label>
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Dietary Preference</label>
                                     <div className="relative">
-                                        <select name="preference" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700 appearance-none cursor-pointer">
+                                        <select name="preference" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700 appearance-none cursor-pointer">
                                             <option>Vegetarian</option>
                                             <option>Non-Vegetarian</option>
                                             <option>Mixed (Both Veg & Non-Veg)</option>
@@ -176,11 +176,11 @@ const Contact = () => {
                             </div>
 
                             {/* Row 4 */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Time of Event</label>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Time of Event</label>
                                     <div className="relative">
-                                        <select name="time" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700 appearance-none cursor-pointer">
+                                        <select name="time" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 text-gray-700 appearance-none cursor-pointer">
                                             <option>Lunch</option>
                                             <option>Dinner</option>
                                             <option>High Tea</option>
@@ -191,31 +191,31 @@ const Contact = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Expected Guests</label>
-                                    <input required name="members" type="number" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="e.g., 500" />
+                                <div className="space-y-1">
+                                    <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Expected Guests</label>
+                                    <input required name="members" type="number" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="e.g., 500" />
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Email Address</label>
-                                <input name="email" type="email" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="johndoe@example.com (Optional)" />
+                            <div className="space-y-1">
+                                <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Email Address</label>
+                                <input name="email" type="email" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300" placeholder="johndoe@example.com (Optional)" />
                             </div>
 
-                            <div className="space-y-2 pt-2">
-                                <label className="text-sm font-bold text-dark-green uppercase tracking-widest px-1">Additional Details</label>
-                                <textarea name="comments" rows="3" className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 resize-none" placeholder="Any special themes, dietary requirements, or specific dishes you'd like?"></textarea>
+                            <div className="space-y-1 pt-1">
+                                <label className="text-xs font-bold text-dark-green uppercase tracking-widest px-1">Additional Details</label>
+                                <textarea name="comments" rows="2" className="w-full px-4 py-3 rounded-xl bg-gray-50/50 border border-gray-200 focus:bg-white focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/10 outline-none transition-all duration-300 resize-none" placeholder="Any special themes, dietary requirements, or specific dishes you'd like?"></textarea>
                             </div>
 
-                            <div className="pt-4">
+                            <div className="pt-2">
                                 <motion.button
                                     whileHover={{ scale: 1.01, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     type="submit"
-                                    className="w-full bg-dark-green text-luxury-gold font-bold py-5 rounded-2xl shadow-[0_10px_30px_rgba(0,21,41,0.2)] hover:shadow-[0_15px_40px_rgba(0,21,41,0.3)] transition-all duration-300 flex items-center justify-center gap-3 text-lg uppercase tracking-widest border border-luxury-gold/20 hover:border-luxury-gold"
+                                    className="w-full bg-dark-green text-luxury-gold font-bold py-4 rounded-xl shadow-[0_10px_30px_rgba(0,21,41,0.2)] hover:shadow-[0_15px_40px_rgba(0,21,41,0.3)] transition-all duration-300 flex items-center justify-center gap-3 text-[15px] uppercase tracking-widest border border-luxury-gold/20 hover:border-luxury-gold"
                                 >
-                                    <Send size={22} className="stroke-[2.5]" />
-                                    Submit Enquiry via WhatsApp
+                                    <Send size={18} className="stroke-[2.5]" />
+                                    Submit Enquiry
                                 </motion.button>
                             </div>
                         </form>
