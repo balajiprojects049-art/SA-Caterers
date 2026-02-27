@@ -1,9 +1,26 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Info, ShoppingBag } from 'lucide-react';
+import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza } from 'lucide-react';
 import BackgroundTexture from '../components/BackgroundTexture';
 import { menuPackages } from '../data/menuData';
 import { cn } from '../lib/utils';
+
+const getCategoryIcon = (categoryName) => {
+    const lower = categoryName.toLowerCase();
+    if (lower.includes('juice') || lower.includes('milk shake') || lower.includes('punch') || lower.includes('beverage')) return <CupSoda size={28} strokeWidth={1.5} />;
+    if (lower.includes('coffee') || lower.includes('tea')) return <Coffee size={28} strokeWidth={1.5} />;
+    if (lower.includes('sweet') || lower.includes('mithai')) return <Dessert size={28} strokeWidth={1.5} />;
+    if (lower.includes('chat') || lower.includes('stall')) return <Store size={28} strokeWidth={1.5} />;
+    if (lower.includes('global') || lower.includes('pizza') || lower.includes('italian')) return <Pizza size={28} strokeWidth={1.5} />;
+    if (lower.includes('curry') || lower.includes('dal') || lower.includes('masala')) return <Soup size={28} strokeWidth={1.5} />;
+    if (lower.includes('rice') || lower.includes('biryani') || lower.includes('main') || lower.includes('basic')) return <UtensilsCrossed size={28} strokeWidth={1.5} />;
+    if (lower.includes('bread') || lower.includes('dosa') || lower.includes('south indian') || lower.includes('breakfast')) return <CookingPot size={28} strokeWidth={1.5} />;
+    if (lower.includes('chicken') || lower.includes('mutton') || lower.includes('non-veg') || lower.includes('meat')) return <Drumstick size={28} strokeWidth={1.5} />;
+    if (lower.includes('fish') || lower.includes('prawn')) return <Fish size={28} strokeWidth={1.5} />;
+    if (lower.includes('alcohol') || lower.includes('drink')) return <Wine size={28} strokeWidth={1.5} />;
+    if (lower.includes('starter') || lower.includes('fry') || lower.includes('snack')) return <Flame size={28} strokeWidth={1.5} />;
+    return <ChefHat size={28} strokeWidth={1.5} />;
+};
 
 const Menu = () => {
     const [activeTab, setActiveTab] = useState(menuPackages[0].id);
@@ -276,8 +293,8 @@ const Menu = () => {
                                             >
                                                 {/* Card Header */}
                                                 <div className="px-8 pt-8 pb-4 flex items-center space-x-4">
-                                                    <div className={`w-12 h-12 rounded-2xl ${style.iconBg} ${style.iconColor} flex items-center justify-center font-playfair font-bold text-xl`}>
-                                                        <span className="text-2xl">Ψ</span>
+                                                    <div className={`w-14 h-14 rounded-2xl ${style.iconBg} ${style.iconColor} flex items-center justify-center shadow-inner`}>
+                                                        {getCategoryIcon(category.category)}
                                                     </div>
                                                     <h3 className={`text-xl font-playfair font-bold ${style.titleColor} tracking-wide`}>{category.category}</h3>
                                                 </div>
