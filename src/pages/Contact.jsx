@@ -48,7 +48,7 @@ const Contact = () => {
                     <div className="lg:col-span-2 bg-dark-green p-10 lg:p-12 text-white relative overflow-visible flex flex-col justify-between rounded-t-[3rem] lg:rounded-t-none lg:rounded-l-[3rem]">
                         <div className="relative z-10 flex flex-col flex-grow pt-48 lg:pt-60">
                             {/* Overflowing Avatar element */}
-                            <div className="absolute top-4 lg:top-12 left-1/2 -translate-x-1/2 w-52 h-60 flex items-start justify-center z-20 pointer-events-none drop-shadow-2xl mb-12">
+                            <div className="absolute -top-10 lg:-top-20 left-1/2 -translate-x-1/2 w-72 h-80 lg:w-80 lg:h-96 flex items-start justify-center z-20 pointer-events-none drop-shadow-2xl mb-12">
                                 <img src="/avatar.png" alt="Contact Support Character" className="h-full object-contain" style={{ filter: 'drop-shadow(0 15px 20px rgba(0,0,0,0.4))' }} />
                             </div>
 
