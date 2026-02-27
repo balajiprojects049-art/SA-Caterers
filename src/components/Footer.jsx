@@ -58,13 +58,18 @@ const Footer = () => {
                         <div>
                             <h4 className="text-lg font-playfair font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Explore</h4>
                             <ul className="space-y-3 font-poppins">
-                                {['Home', 'About Us', 'Menu', 'Gallery', 'Contact'].map((item) => (
-                                    <li key={item}>
+                                {[
+                                    { label: 'Home', path: '/' },
+                                    { label: 'About Us', path: '/about' },
+                                    { label: 'Menu', path: '/menu' },
+                                    { label: 'Contact', path: '/contact' }
+                                ].map((item) => (
+                                    <li key={item.label}>
                                         <Link
-                                            to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
+                                            to={item.path}
                                             className="text-gray-400 hover:text-luxury-gold transition-colors inline-block text-[15px] hover:translate-x-1 transform duration-200"
                                         >
-                                            {item}
+                                            {item.label}
                                         </Link>
                                     </li>
                                 ))}
