@@ -42,61 +42,73 @@ const Contact = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.08)] overflow-hidden mb-24 border border-gray-100 flex-col-reverse lg:flex-row relative z-20">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-transparent rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.08)] mb-24 mt-16 md:mt-20 lg:mt-0 border border-gray-100 flex-col-reverse lg:flex-row relative z-20">
 
-                    {/* Left Side: Contact Information (Dark Luxury) */}
-                    <div className="lg:col-span-2 bg-dark-green p-12 lg:p-16 text-white relative overflow-hidden flex flex-col justify-between">
-                        {/* Decorative Background Elements */}
-                        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-5">
-                            <div className="absolute -top-10 -right-10 text-white"><ChefHat size={300} strokeWidth={1} /></div>
-                        </div>
+                    {/* Left Side: Contact Information (Dark Green) */}
+                    <div className="lg:col-span-2 bg-dark-green p-10 lg:p-12 text-white relative overflow-visible flex flex-col justify-between rounded-t-[3rem] lg:rounded-t-none lg:rounded-l-[3rem]">
+                        <div className="relative z-10 flex flex-col flex-grow pt-48 lg:pt-60">
+                            {/* Overflowing Avatar element */}
+                            <div className="absolute top-4 lg:top-12 left-1/2 -translate-x-1/2 w-52 h-60 flex items-start justify-center z-20 pointer-events-none drop-shadow-2xl mb-12">
+                                <img src="/avatar.png" alt="Contact Support Character" className="h-full object-contain" style={{ filter: 'drop-shadow(0 15px 20px rgba(0,0,0,0.4))' }} />
+                            </div>
 
-                        <div className="relative z-10">
-                            <h2 className="text-4xl font-playfair font-bold text-white mb-2">Contact Info</h2>
-                            <p className="text-gray-400 font-light mb-12">Reach out directly or use the secure form.</p>
+                            <h2 className="text-3xl font-playfair font-black text-white mb-10 tracking-wide mt-40 lg:mt-30">Get in Touch</h2>
 
-                            <div className="space-y-10">
-                                <motion.div whileHover={{ x: 5 }} className="flex items-start group cursor-pointer" onClick={() => window.open('tel:+919030927239')}>
-                                    <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-luxury-gold transition-colors duration-300 flex-shrink-0">
-                                        <Phone size={24} className="text-luxury-gold group-hover:text-dark-green transition-colors" />
+                            <div className="space-y-8 w-full">
+                                <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('https://maps.google.com')}>
+                                    <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mr-5 transition-colors duration-300 flex-shrink-0 shadow-md">
+                                        <MapPin size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
-                                    <div>
-                                        <h3 className="font-playfair font-bold text-xl text-white mb-1">Call Us</h3>
-                                        <p className="text-gray-300 font-light text-lg tracking-wide">+91 90309 27239</p>
-                                        <p className="text-gray-400 font-light text-sm mt-1">Available 9:00 AM - 9:00 PM</p>
+                                    <div className="flex flex-col">
+                                        <h3 className="font-playfair font-bold text-lg text-white tracking-wide">Our Location</h3>
+                                        <p className="text-gray-300 font-light text-sm mt-1">Secunderabad Hyderabad</p>
                                     </div>
                                 </motion.div>
 
-                                <motion.div whileHover={{ x: 5 }} className="flex items-start group cursor-pointer" onClick={() => window.open('mailto:staffarccaterings@gmail.com')}>
-                                    <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-luxury-gold transition-colors duration-300 flex-shrink-0">
-                                        <Mail size={24} className="text-luxury-gold group-hover:text-dark-green transition-colors" />
+                                <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('tel:+918555969207')}>
+                                    <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mr-5 transition-colors duration-300 flex-shrink-0 shadow-md">
+                                        <Phone size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
-                                    <div>
-                                        <h3 className="font-playfair font-bold text-xl text-white mb-1">Email Us</h3>
-                                        <p className="text-gray-300 font-light text-lg tracking-wide">staffarccaterings@gmail.com</p>
-                                        <p className="text-gray-400 font-light text-sm mt-1">We reply within 24 hours</p>
+                                    <div className="flex flex-col">
+                                        <h3 className="font-playfair font-bold text-lg text-white tracking-wide">Phone Number</h3>
+                                        <p className="text-gray-300 font-light text-sm mt-1">8555969207</p>
                                     </div>
                                 </motion.div>
 
-                                <motion.div whileHover={{ x: 5 }} className="flex items-start group">
-                                    <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-luxury-gold transition-colors duration-300 flex-shrink-0">
-                                        <MapPin size={24} className="text-luxury-gold group-hover:text-dark-green transition-colors" />
+                                <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('mailto:shrithikcatering@gmail.com')}>
+                                    <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mr-5 transition-colors duration-300 flex-shrink-0 shadow-md">
+                                        <Mail size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
-                                    <div>
-                                        <h3 className="font-playfair font-bold text-xl text-white mb-2">Visit Us</h3>
-                                        <p className="text-gray-300 font-light leading-relaxed">Plot No. 49, 1st Floor,<br />P & T Colony, Karkhana,<br />Secunderabad, TS 500009</p>
+                                    <div className="flex flex-col">
+                                        <h3 className="font-playfair font-bold text-lg text-white tracking-wide">Email Address</h3>
+                                        <p className="text-gray-300 font-light text-sm mt-1">shrithikcatering@gmail.com</p>
                                     </div>
                                 </motion.div>
                             </div>
                         </div>
 
-                        <div className="relative z-10 mt-16 pt-10 border-t border-white/10">
-                            <p className="text-luxury-gold font-playfair italic text-xl text-center">"Serving perfection, every single time."</p>
+                        <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
+                            <h3 className="font-playfair font-bold text-lg text-white tracking-wide mb-6">Business Hours</h3>
+
+                            <div className="space-y-3 text-[15px] font-light">
+                                <div className="flex justify-between items-center text-gray-300">
+                                    <span>Mon - Fri:</span>
+                                    <span>10:00 AM - 8:00 PM</span>
+                                </div>
+                                <div className="flex justify-between items-center text-gray-300">
+                                    <span>Saturday:</span>
+                                    <span>10:00 AM - 9:00 PM</span>
+                                </div>
+                                <div className="flex justify-between items-center text-gray-300">
+                                    <span>Sunday:</span>
+                                    <span>11:00 AM - 8:00 PM</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     {/* Right Side: The Form */}
-                    <div className="lg:col-span-3 p-12 lg:p-16 bg-white relative">
+                    <div className="lg:col-span-3 p-12 lg:p-16 bg-white relative rounded-b-[3rem] lg:rounded-b-none lg:rounded-r-[3rem]">
                         <h2 className="text-4xl font-playfair font-bold text-dark-green mb-2">Send an Enquiry</h2>
                         <p className="text-gray-500 font-light mb-8">Fill out the details below, and we'll get back to you with a curated proposal.</p>
 
