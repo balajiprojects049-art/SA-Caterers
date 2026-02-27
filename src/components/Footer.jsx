@@ -1,7 +1,26 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Facebook, Twitter, Clock, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook, Twitter, Clock, ArrowRight, Check } from 'lucide-react';
 
 const Footer = () => {
+    const [email, setEmail] = useState('');
+    const [subscribed, setSubscribed] = useState(false);
+
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        if (email) {
+            // Open user's email client to send the subscription request
+            const subject = encodeURIComponent("New Newsletter Subscription Request");
+            const body = encodeURIComponent(`Hello SA Caterers,\n\nPlease add my email address to your newsletter subscription list.\n\nMy Email: ${email}\n\nThank you!`);
+            window.location.href = `mailto:info@sahcaterers.com?subject=${subject}&body=${body}`;
+
+            setSubscribed(true);
+            setEmail('');
+            // Reset success message after 3 seconds
+            setTimeout(() => setSubscribed(false), 3000);
+        }
+    };
+
     return (
         <footer className="bg-green-texture text-white relative overflow-hidden pt-10">
             {/* Top Gold Line */}
@@ -96,18 +115,30 @@ const Footer = () => {
                         <p className="text-gray-400 text-[14px] mb-4 font-poppins">
                             Subscribe to receive exclusive offers and seasonal menu updates.
                         </p>
-                        <form className="mb-8 relative" onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                type="email"
-                                placeholder="Your email address"
-                                className="w-full bg-white/5 border border-white/20 rounded-full py-3 px-5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-luxury-gold focus:bg-white/10 transition-all font-poppins"
-                            />
-                            <button
-                                type="submit"
-                                className="absolute right-1.5 top-1.5 bottom-1.5 w-10 bg-luxury-gold rounded-full flex items-center justify-center text-dark-green hover:bg-[#d6a54e] transition-colors"
-                            >
-                                <ArrowRight size={18} strokeWidth={2.5} />
-                            </button>
+                        <form className="mb-8 relative h-[46px]" onSubmit={handleSubscribe}>
+                            {subscribed ? (
+                                <div className="absolute inset-0 bg-luxury-gold/20 border border-luxury-gold/50 rounded-full flex items-center px-5 text-sm font-poppins text-luxury-gold backdrop-blur-sm animate-in fade-in duration-300">
+                                    <Check size={18} className="mr-2" strokeWidth={3} />
+                                    Successfully subscribed!
+                                </div>
+                            ) : (
+                                <>
+                                    <input
+                                        type="email"
+                                        placeholder="Your email address"
+                                        required
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="w-full h-full bg-white/5 border border-white/20 rounded-full px-5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-luxury-gold focus:bg-white/10 transition-all font-poppins"
+                                    />
+                                    <button
+                                        type="submit"
+                                        className="absolute right-1.5 top-1.5 bottom-1.5 w-[34px] h-[34px] my-auto bg-luxury-gold rounded-full flex items-center justify-center text-dark-green hover:bg-[#d6a54e] transition-colors"
+                                    >
+                                        <ArrowRight size={18} strokeWidth={2.5} />
+                                    </button>
+                                </>
+                            )}
                         </form>
 
                         <div className="flex items-start">
