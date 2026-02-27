@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza } from 'lucide-react';
+import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza, X } from 'lucide-react';
 import BackgroundTexture from '../components/BackgroundTexture';
 import { menuPackages } from '../data/menuData';
 import { cn } from '../lib/utils';
@@ -25,6 +25,8 @@ const getCategoryIcon = (categoryName) => {
 const Menu = () => {
     const [activeTab, setActiveTab] = useState(menuPackages[0].id);
     const [selectedItems, setSelectedItems] = useState([]);
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    const [formData, setFormData] = useState({ name: '', phone: '', date: '', location: '', guests: '' });
 
     const activePackage = menuPackages.find(p => p.id === activeTab) || menuPackages[0];
 
@@ -34,14 +36,37 @@ const Menu = () => {
         );
     };
 
-    const handleEnquiry = () => {
+    const handleFormChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleEnquiryClick = () => {
         if (selectedItems.length === 0) {
             alert("Please select some items to enquire about.");
             return;
         }
-        const message = `Hello, I am interested in the following items from the *${activePackage.label}*: \n\n${selectedItems.join(', ')}`;
+        setIsFormOpen(true);
+    };
+
+    const submitEnquiry = (e) => {
+        e.preventDefault();
+        const { name, phone, date, location, guests } = formData;
+
+        let message = `Hello! I would like to enquire about a catering event. 🌟\n\n`;
+        message += `*Contact Details:*\n`;
+        message += `👤 Name: ${name}\n`;
+        message += `📞 Phone: ${phone}\n`;
+        message += `📅 Date: ${date}\n`;
+        if (location) message += `📍 Location: ${location}\n`;
+        if (guests) message += `👥 Guests: ${guests}\n\n`;
+
+        message += `*Selected Menu (${activePackage.label}):*\n`;
+        message += selectedItems.map(item => `✅ ${item}`).join('\n');
+
         const url = `https://wa.me/919030927239?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
+        setIsFormOpen(false);
     }
 
     return (
@@ -364,7 +389,7 @@ const Menu = () => {
                                         Clear
                                     </button>
                                     <button
-                                        onClick={handleEnquiry}
+                                        onClick={handleEnquiryClick}
                                         className="px-6 py-2.5 rounded-full bg-luxury-gold text-dark-green font-bold shadow-lg hover:bg-[#d6a54e] hover:shadow-luxury-gold/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 flex-[2] md:flex-none whitespace-nowrap"
                                     >
                                         <ShoppingBag size={18} strokeWidth={2.5} />
@@ -372,6 +397,65 @@ const Menu = () => {
                                     </button>
                                 </div>
                             </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                {/* Enquiry Form Modal */}
+                <AnimatePresence>
+                    {isFormOpen && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pt-24 pb-8 bg-black/60 backdrop-blur-sm overflow-y-auto"
+                        >
+                            <motion.div
+                                initial={{ scale: 0.95, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.95, opacity: 0 }}
+                                className="bg-white rounded-[2rem] p-6 md:p-8 max-w-md w-full shadow-2xl relative my-auto"
+                            >
+                                <button
+                                    onClick={() => setIsFormOpen(false)}
+                                    className="absolute top-6 right-6 text-gray-400 hover:text-gray-800 transition-colors"
+                                >
+                                    <X size={24} />
+                                </button>
+
+                                <h3 className="text-2xl md:text-3xl font-playfair font-bold text-dark-green mb-2">Event Details</h3>
+                                <p className="text-gray-500 mb-6 text-sm">Please provide your details so we can assist you better.</p>
+
+                                <form onSubmit={submitEnquiry} className="space-y-4">
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                                        <input required type="text" name="name" value={formData.name} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="Your Name" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                                        <input required type="tel" name="phone" value={formData.phone} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="Your Phone Number" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Event Date *</label>
+                                        <input required type="date" name="date" value={formData.date} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" />
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Guests</label>
+                                            <input type="number" name="guests" value={formData.guests} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="E.g. 200" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
+                                            <input type="text" name="location" value={formData.location} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="City / Area" />
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" className="w-full mt-6 py-4 bg-dark-green text-luxury-gold font-bold text-lg rounded-xl shadow-lg hover:bg-[#1a3826] transition-colors flex items-center justify-center gap-2">
+                                        <ShoppingBag size={20} />
+                                        Send to WhatsApp
+                                    </button>
+                                </form>
+                            </motion.div>
                         </motion.div>
                     )}
                 </AnimatePresence>
