@@ -53,16 +53,23 @@ const Menu = () => {
         e.preventDefault();
         const { name, phone, date, location, guests } = formData;
 
-        let message = `Hello! I would like to enquire about a catering event. 🌟\n\n`;
-        message += `*Contact Details:*\n`;
-        message += `👤 Name: ${name}\n`;
-        message += `📞 Phone: ${phone}\n`;
-        message += `📅 Date: ${date}\n`;
-        if (location) message += `📍 Location: ${location}\n`;
-        if (guests) message += `👥 Guests: ${guests}\n\n`;
+        let message = `*NEW CATERING INQUIRY*\n`;
+        message += `---------------------------------------\n\n`;
 
-        message += `*Selected Menu (${activePackage.label}):*\n`;
-        message += selectedItems.map(item => `✅ ${item}`).join('\n');
+        message += `*CLIENT DETAILS*\n`;
+        message += `👤 *Name:* ${name}\n`;
+        message += `📞 *Phone:* ${phone}\n`;
+        message += `📅 *Event Date:* ${date}\n`;
+        if (guests) message += `� *Guest Count:* ${guests} pax\n`;
+        if (location) message += `� *Venue/Area:* ${location}\n\n`;
+
+        message += `*MENU SELECTION*\n`;
+        message += `🏷️ *Package:* ${activePackage.label}\n`;
+        message += `📋 *Items Selected (${selectedItems.length}):*\n`;
+        message += selectedItems.map(item => `   ▪ ${item}`).join('\n');
+
+        message += `\n---------------------------------------\n`;
+        message += `_Sent via SA Caterers Website_`;
 
         const url = `https://wa.me/919030927239?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
