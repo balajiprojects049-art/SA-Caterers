@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, UtensilsCrossed, Briefcase, Cake, Star, Quote } from 'lucide-react';
 import BackgroundTexture from '../components/BackgroundTexture';
@@ -7,20 +8,47 @@ const Home = () => {
     const { scrollY } = useScroll();
     const heroY = useTransform(scrollY, [0, 500], [0, 150]);
 
+    const heroImages = [
+        "/indian_catering_hero_1_1772217303649.png",
+        "/indian_catering_hero_2_1772217316756.png",
+        "/indian_catering_hero_3_1772217333811.png"
+    ];
+
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % heroImages.length);
+        }, 5000); // Change image every 5 seconds
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="w-full overflow-hidden">
             {/* Hero Section */}
             <section className="h-screen relative flex items-center justify-center overflow-hidden">
                 <motion.div
                     style={{ y: heroY }}
-                    className="absolute inset-0 z-0"
+                    className="absolute inset-0 z-0 bg-black"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent z-10"></div>
-                    <img
-                        src="/fresh-gourmet-meal-beef-taco-salad-plate-generated-by-ai.jpg"
-                        alt="Royal Catering Banquet"
-                        className="w-full h-full object-cover"
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent z-10 pointer-events-none"></div>
+                    <AnimatePresence>
+                        <motion.img
+                            key={currentImage}
+                            src={heroImages[currentImage]}
+                            alt={`Royal Catering Banquet ${currentImage + 1}`}
+                            className="absolute inset-0 w-full h-full object-cover"
+                            style={{
+                                imageRendering: "high-quality",
+                                WebkitFontSmoothing: "antialiased",
+                                filter: "contrast(1.05) saturate(1.05)" // Slight bump to make colors pop like 8k HDR
+                            }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                        />
+                    </AnimatePresence>
                 </motion.div>
 
                 <div className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-10 md:mt-0">
@@ -80,7 +108,7 @@ const Home = () => {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         {/* Text Content */}
-                        <div className="text-left bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-white/50">
+                        <div className="text-left bg-white/90 backdrop-blur-sm p-8 lg:p-12 rounded-3xl shadow-lg border border-white/50 relative z-20">
                             <div className="mb-6 flex justify-start">
                                 <div className="w-12 h-12 rounded-full bg-luxury-gold/10 flex items-center justify-center">
                                     <Quote className="text-luxury-gold w-6 h-6" />
@@ -122,14 +150,15 @@ const Home = () => {
                         </div>
 
                         {/* Image Content */}
-                        <div className="relative">
-                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                        <div className="relative pt-10 md:pt-0">
+                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[500px] lg:h-[550px] w-full">
                                 <img
-                                    src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format&fit=crop&q=80&w=1000"
-                                    alt="Chefs Cooking"
+                                    src="/indian_chefs_cooking_1772217808721.png"
+                                    alt="Chefs Plating Indian Food"
                                     className="w-full h-full object-cover"
+                                    style={{ objectPosition: "center", imageRendering: "high-quality", filter: "contrast(1.02) saturate(1.05)" }}
                                 />
-                                <div className="absolute inset-0 bg-dark-green/10"></div>
+                                <div className="absolute inset-0 bg-dark-green/10 pointer-events-none"></div>
                             </div>
 
                             {/* Experience Badge */}
@@ -271,15 +300,27 @@ const Home = () => {
                 <div className="mb-8 text-center">
                     <h3 className="font-playfair text-2xl text-luxury-gold italic">Captured Moments</h3>
                 </div>
-                <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide px-4 md:justify-center">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i} className="min-w-[220px] h-[250px] md:h-[300px] rounded-xl overflow-hidden relative group shrink-0">
+                <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide px-4">
+                    {[
+                        "/ap_hyd_gallery_1_1772218641518.png",
+                        "/gallery_moment_1_1772218443129.png",
+                        "/ap_hyd_gallery_2_1772218656042.png",
+                        "/gallery_moment_2_1772218457394.png",
+                        "/ap_hyd_gallery_3_1772218670479.png",
+                        "/gallery_moment_3_1772218470648.png",
+                        "/ap_hyd_gallery_4_1772218684599.png",
+                        "/gallery_moment_4_1772218490214.png",
+                        "/ap_hyd_gallery_5_1772218698698.png",
+                        "/gallery_moment_5_1772218505264.png"
+                    ].map((src, i) => (
+                        <div key={i} className="min-w-[250px] md:min-w-[300px] h-[250px] md:h-[300px] rounded-xl overflow-hidden relative group shrink-0 shadow-lg border border-white/10">
                             <img
-                                src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1555244162-803834f70033' : '1504674900247-0877df9cc836'}?auto=format&fit=crop&w=600&q=80`}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                                alt="Gallery"
+                                src={src}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                style={{ imageRendering: "high-quality", filter: "contrast(1.02) saturate(1.05)" }}
+                                alt={`Gallery Moment ${i + 1}`}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         </div>
                     ))}
                 </div>
