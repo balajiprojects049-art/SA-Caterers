@@ -48,11 +48,11 @@ const Contact = () => {
                     <div className="lg:col-span-2 bg-dark-green p-10 lg:p-12 text-white relative overflow-visible flex flex-col justify-between rounded-t-[3rem] lg:rounded-t-none lg:rounded-l-[3rem]">
                         <div className="relative z-10 flex flex-col flex-grow pt-48 lg:pt-60">
                             {/* Overflowing Avatar element */}
-                            <div className="absolute -top-10 lg:-top-20 left-1/2 -translate-x-1/2 w-72 h-80 lg:w-80 lg:h-96 flex items-start justify-center z-20 pointer-events-none drop-shadow-2xl mb-12">
+                            <div className="absolute top-12 lg:top-16 left-1/2 -translate-x-1/2 w-72 h-80 lg:w-80 lg:h-96 flex items-start justify-center z-20 pointer-events-none drop-shadow-2xl mb-12">
                                 <img src="/avatar.png" alt="Contact Support Character" className="h-full object-contain" style={{ filter: 'drop-shadow(0 15px 20px rgba(0,0,0,0.4))' }} />
                             </div>
 
-                            <h2 className="text-3xl font-playfair font-black text-white mb-10 tracking-wide mt-40 lg:mt-30">Get in Touch</h2>
+                            <h2 className="text-3xl font-playfair font-black text-white mb-10 tracking-wide mt-56 lg:mt-64">Get in Touch</h2>
 
                             <div className="space-y-8 w-full">
                                 <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('https://maps.google.com')}>
