@@ -24,8 +24,8 @@ const About = () => {
                 >
                     <div className="absolute inset-0 bg-dark-green/70 z-10 mix-blend-multiply"></div>
                     <img
-                        src="https://images.unsplash.com/photo-1555244162-803834f87a4d?auto=format&fit=crop&w=2000&q=80"
-                        alt="Fine Dining Setup"
+                        src="/about_hero.png"
+                        alt="SA Caterers Royal Dining Setup"
                         className="w-full h-full object-cover"
                     />
                 </motion.div>
@@ -89,8 +89,8 @@ const About = () => {
                         >
                             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-2xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format&fit=crop&w=1000&q=80"
-                                    alt="Chef Cooking"
+                                    src="/about_chef.png"
+                                    alt="SA Caterers Master Chef"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-dark-green/80 to-transparent flex flex-col justify-end p-10">
@@ -100,8 +100,8 @@ const About = () => {
                             </div>
                             <div className="absolute -bottom-8 -right-8 w-64 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white hidden md:block z-10">
                                 <img
-                                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80"
-                                    alt="Elegant Dish"
+                                    src="/about_dish.png"
+                                    alt="SA Caterers Signature Dish"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
