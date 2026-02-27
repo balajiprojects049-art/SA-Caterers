@@ -227,8 +227,8 @@ const About = () => {
                             className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1000&q=80"
-                                alt="Spices and Ingredients"
+                                src="/ap_hyd_gallery_5_1772218698698.png"
+                                alt="Authentic Spices and Ingredients"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-dark-green/20"></div>
