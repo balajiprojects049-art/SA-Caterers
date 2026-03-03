@@ -18,7 +18,7 @@ const EVENT_TYPES = [
 ];
 
 const inputBase =
-    'w-full bg-white rounded-2xl px-5 py-4 pl-12 text-gray-800 text-[15px] font-poppins placeholder-gray-400 border border-transparent focus:outline-none focus:border-luxury-gold/60 focus:ring-2 focus:ring-luxury-gold/20 transition-all shadow-sm';
+    'w-full bg-white rounded-2xl px-5 py-4 pl-12 text-gray-800 text-[15px] placeholder-gray-400 border border-transparent focus:outline-none focus:border-luxury-gold/60 focus:ring-2 focus:ring-luxury-gold/20 transition-all shadow-sm';
 
 const IconWrap = ({ children }) => (
     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
@@ -27,7 +27,7 @@ const IconWrap = ({ children }) => (
 );
 
 const FieldLabel = ({ children }) => (
-    <label className="block text-[#D4AF37] font-semibold text-sm mb-2 font-poppins tracking-wide">
+    <label className="block text-[#D4AF37] font-semibold text-sm mb-2 tracking-wide">
         {children}
     </label>
 );
@@ -105,18 +105,18 @@ const QuoteForm = () => {
                 {/* Logo */}
                 <div className="mb-6 flex justify-center">
                     <img
-                        src="/logo.jpeg"
+                        src="/logo.png"
                         alt="SA Caterers Logo"
-                        className="w-full h-auto object-contain max-w-[280px] rounded-xl shadow-lg border border-luxury-gold/20"
+                        className="h-32 md:h-48 w-auto object-contain mx-auto rounded-xl drop-shadow-lg"
                     />
                 </div>
 
                 {/* Heading */}
                 <div className="text-center mb-8">
-                    <h1 className="font-playfair font-bold text-[#D4AF37] text-3xl mb-2">
+                    <h1 className=" font-bold text-[#D4AF37] text-3xl mb-2">
                         Request&nbsp;a&nbsp;Quote
                     </h1>
-                    <p className="text-gray-300 text-sm font-poppins">
+                    <p className="text-gray-300 text-sm">
                         Fill in your details and we'll get back to you
                     </p>
                 </div>
@@ -242,7 +242,7 @@ const QuoteForm = () => {
                                 onChange={handleChange}
                                 rows={5}
                                 placeholder={`Describe your menu requirements...\n\nExample:\n- South Indian breakfast\n- Lunch with variety rice\n- Sweets and snacks\n- Any specific dishes`}
-                                className="w-full bg-white rounded-2xl px-5 py-4 pl-12 text-gray-800 text-[15px] font-poppins placeholder-gray-400 border border-transparent focus:outline-none focus:border-luxury-gold/60 focus:ring-2 focus:ring-luxury-gold/20 transition-all shadow-sm resize-none"
+                                className="w-full bg-white rounded-2xl px-5 py-4 pl-12 text-gray-800 text-[15px] placeholder-gray-400 border border-transparent focus:outline-none focus:border-luxury-gold/60 focus:ring-2 focus:ring-luxury-gold/20 transition-all shadow-sm resize-none"
                             />
                         </div>
                     </div>
@@ -252,7 +252,7 @@ const QuoteForm = () => {
                         <motion.button
                             whileTap={{ scale: 0.96 }}
                             onClick={handleWhatsApp}
-                            className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold font-poppins py-4 rounded-2xl shadow-lg text-[15px] hover:bg-[#1ebe5d] transition-colors"
+                            className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-4 rounded-2xl shadow-lg text-[15px] hover:bg-[#1ebe5d] transition-colors"
                         >
                             {/* WhatsApp SVG */}
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -265,7 +265,7 @@ const QuoteForm = () => {
                         <motion.button
                             whileTap={{ scale: 0.96 }}
                             onClick={handleSMS}
-                            className="flex items-center justify-center gap-2 bg-[#C9973A] text-white font-bold font-poppins py-4 rounded-2xl shadow-lg text-[15px] hover:bg-[#b8852e] transition-colors"
+                            className="flex items-center justify-center gap-2 bg-[#C9973A] text-white font-bold py-4 rounded-2xl shadow-lg text-[15px] hover:bg-[#b8852e] transition-colors"
                         >
                             <MessageCircle size={20} />
                             SMS
@@ -274,13 +274,13 @@ const QuoteForm = () => {
 
                     {/* Or connect with us */}
                     <div className="pt-4">
-                        <p className="text-center text-gray-400 text-sm font-poppins mb-4">
+                        <p className="text-center text-gray-400 text-sm mb-4">
                             Or connect with us
                         </p>
                         <div className="flex justify-center gap-4">
                             <a
                                 href="tel:+919030927239"
-                                className="flex items-center gap-2 border border-[#D4AF37] text-[#D4AF37] px-6 py-2.5 rounded-full text-sm font-semibold font-poppins hover:bg-[#D4AF37]/10 transition-colors"
+                                className="flex items-center gap-2 border border-[#D4AF37] text-[#D4AF37] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#D4AF37]/10 transition-colors"
                             >
                                 <PhoneCall size={16} />
                                 Call
@@ -289,7 +289,7 @@ const QuoteForm = () => {
                                 href="https://www.instagram.com/sa.hyderabadcaterers"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 border border-[#D4AF37] text-[#D4AF37] px-6 py-2.5 rounded-full text-sm font-semibold font-poppins hover:bg-[#D4AF37]/10 transition-colors"
+                                className="flex items-center gap-2 border border-[#D4AF37] text-[#D4AF37] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#D4AF37]/10 transition-colors"
                             >
                                 <Instagram size={16} />
                                 Instagram
@@ -300,10 +300,10 @@ const QuoteForm = () => {
 
                 {/* Footer tagline */}
                 <div className="text-center mt-10 pb-4">
-                    <p className="text-[#D4AF37] italic text-sm font-poppins">
+                    <p className="text-[#D4AF37] italic text-sm">
                         Where Every Plate Tells a Story of a Tasty Soul
                     </p>
-                    <p className="text-gray-500 text-xs mt-1 font-poppins">
+                    <p className="text-gray-500 text-xs mt-1">
                         @sa.hyderabadcaterers
                     </p>
                 </div>

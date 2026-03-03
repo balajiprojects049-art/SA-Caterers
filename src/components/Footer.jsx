@@ -34,10 +34,10 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
                     {/* Brand & Socials */}
                     <div className="pr-4">
-                        <Link to="/" className="text-3xl font-playfair font-bold text-luxury-gold mb-6 block drop-shadow-sm">
-                            SA Caterers
+                        <Link to="/" className="mb-6 block">
+                            <img src="/logo.png" alt="SA Caterers" className="h-24 w-auto object-contain drop-shadow-sm" />
                         </Link>
-                        <p className="text-gray-300 mb-8 max-w-sm text-[15px] leading-relaxed font-poppins font-light">
+                        <p className="text-gray-300 mb-8 max-w-sm text-[15px] leading-relaxed font-light">
                             Elevating your celebrations with the authentic, royal taste of Hyderabad. We bring passion, tradition, and perfection to every plate we serve.
                         </p>
                         <div className="flex space-x-4">
@@ -56,8 +56,8 @@ const Footer = () => {
                     {/* Quick & Service Links */}
                     <div className="grid grid-cols-2 gap-4 lg:gap-8 col-span-1 md:col-span-2 lg:col-span-1">
                         <div>
-                            <h4 className="text-lg font-playfair font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Explore</h4>
-                            <ul className="space-y-3 font-poppins">
+                            <h4 className="text-lg font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Explore</h4>
+                            <ul className="space-y-3">
                                 {[
                                     { label: 'Home', path: '/' },
                                     { label: 'About Us', path: '/about' },
@@ -76,8 +76,8 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-lg font-playfair font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Services</h4>
-                            <ul className="space-y-3 font-poppins">
+                            <h4 className="text-lg font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Services</h4>
+                            <ul className="space-y-3">
                                 {[
                                     { label: 'Wedding Catering', path: '/menu' },
                                     { label: 'Corporate Events', path: '/contact' },
@@ -97,8 +97,8 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-playfair font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Get in Touch</h4>
-                        <ul className="space-y-5 font-poppins">
+                        <h4 className="text-lg font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Get in Touch</h4>
+                        <ul className="space-y-5">
                             <li className="flex items-start">
                                 <div className="w-8 h-8 rounded-full bg-luxury-gold/10 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
                                     <MapPin className="text-luxury-gold" size={16} />
@@ -122,13 +122,13 @@ const Footer = () => {
 
                     {/* Newsletter & Hours */}
                     <div className="lg:pl-4">
-                        <h4 className="text-lg font-playfair font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Stay Updated</h4>
-                        <p className="text-gray-400 text-[14px] mb-4 font-poppins">
+                        <h4 className="text-lg font-bold mb-6 text-luxury-gold tracking-wide uppercase text-sm">Stay Updated</h4>
+                        <p className="text-gray-400 text-[14px] mb-4">
                             Subscribe to receive exclusive offers and seasonal menu updates.
                         </p>
                         <form className="mb-8 relative h-[46px]" onSubmit={handleSubscribe}>
                             {subscribed ? (
-                                <div className="absolute inset-0 bg-luxury-gold/20 border border-luxury-gold/50 rounded-full flex items-center px-5 text-sm font-poppins text-luxury-gold backdrop-blur-sm animate-in fade-in duration-300">
+                                <div className="absolute inset-0 bg-luxury-gold/20 border border-luxury-gold/50 rounded-full flex items-center px-5 text-sm text-luxury-gold backdrop-blur-sm animate-in fade-in duration-300">
                                     <Check size={18} className="mr-2" strokeWidth={3} />
                                     Successfully subscribed!
                                 </div>
@@ -140,7 +140,7 @@ const Footer = () => {
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full h-full bg-white/5 border border-white/20 rounded-full px-5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-luxury-gold focus:bg-white/10 transition-all font-poppins"
+                                        className="w-full h-full bg-white/5 border border-white/20 rounded-full px-5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-luxury-gold focus:bg-white/10 transition-all"
                                     />
                                     <button
                                         type="submit"
@@ -155,15 +155,15 @@ const Footer = () => {
                         <div className="flex items-start">
                             <Clock className="text-luxury-gold mr-3 mt-1 flex-shrink-0" size={18} />
                             <div>
-                                <h5 className="text-white text-sm font-bold font-poppins mb-1">Working Hours</h5>
-                                <p className="text-gray-400 text-sm font-poppins">Mon - Sun: 9:00 AM - 9:00 PM</p>
+                                <h5 className="text-white text-sm font-bold mb-1">Working Hours</h5>
+                                <p className="text-gray-400 text-sm">Mon - Sun: 9:00 AM - 9:00 PM</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-[13px] font-poppins">
+                <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-[13px]">
                     <p>&copy; {new Date().getFullYear()} SA Caterers. All rights reserved.</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
                         <a href="#" className="hover:text-luxury-gold transition-colors">Privacy Policy</a>

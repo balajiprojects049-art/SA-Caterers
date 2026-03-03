@@ -31,13 +31,13 @@ const Contact = () => {
                     className="text-center mb-16 max-w-3xl mx-auto"
                 >
                     <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-sm mb-4 block">Let's Connect</span>
-                    <h1 className="text-5xl md:text-7xl font-playfair font-bold text-dark-green mb-6 drop-shadow-sm">
+                    <h1 className="text-5xl md:text-7xl font-bold text-dark-green mb-6 drop-shadow-sm">
                         Get In Touch
                     </h1>
                     <div className="w-32 h-[2px] bg-luxury-gold mx-auto mb-8 relative">
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-luxury-gold bg-cream"></div>
                     </div>
-                    <p className="text-gray-600 text-xl font-light font-poppins leading-relaxed">
+                    <p className="text-gray-600 text-xl font-light leading-relaxed">
                         Ready to make your event unforgettable? Our event specialists are here to craft the perfect culinary experience for you.
                     </p>
                 </motion.div>
@@ -52,7 +52,7 @@ const Contact = () => {
                                 <img src="/avatar.png" alt="Contact Support Character" className="h-full object-contain" style={{ filter: 'drop-shadow(0 15px 20px rgba(0,0,0,0.4))' }} />
                             </div>
 
-                            <h2 className="text-3xl font-playfair font-black text-white mb-10 tracking-wide mt-56 lg:mt-64">Get in Touch</h2>
+                            <h2 className="text-3xl font-black text-white mb-10 tracking-wide mt-56 lg:mt-64">Get in Touch</h2>
 
                             <div className="space-y-8 w-full">
                                 <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('https://maps.google.com')}>
@@ -60,7 +60,7 @@ const Contact = () => {
                                         <MapPin size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
                                     <div className="flex flex-col">
-                                        <h3 className="font-playfair font-bold text-lg text-white tracking-wide">Our Location</h3>
+                                        <h3 className="font-bold text-lg text-white tracking-wide">Our Location</h3>
                                         <p className="text-gray-300 font-light text-sm mt-1">Secunderabad Hyderabad</p>
                                     </div>
                                 </motion.div>
@@ -70,7 +70,7 @@ const Contact = () => {
                                         <Phone size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
                                     <div className="flex flex-col">
-                                        <h3 className="font-playfair font-bold text-lg text-white tracking-wide">Phone Number</h3>
+                                        <h3 className="font-bold text-lg text-white tracking-wide">Phone Number</h3>
                                         <p className="text-gray-300 font-light text-sm mt-1">8555969207</p>
                                     </div>
                                 </motion.div>
@@ -80,7 +80,7 @@ const Contact = () => {
                                         <Mail size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
                                     <div className="flex flex-col">
-                                        <h3 className="font-playfair font-bold text-lg text-white tracking-wide">Email Address</h3>
+                                        <h3 className="font-bold text-lg text-white tracking-wide">Email Address</h3>
                                         <p className="text-gray-300 font-light text-sm mt-1">shrithikcatering@gmail.com</p>
                                     </div>
                                 </motion.div>
@@ -88,7 +88,7 @@ const Contact = () => {
                         </div>
 
                         <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
-                            <h3 className="font-playfair font-bold text-lg text-white tracking-wide mb-6">Business Hours</h3>
+                            <h3 className="font-bold text-lg text-white tracking-wide mb-6">Business Hours</h3>
 
                             <div className="space-y-3 text-[15px] font-light">
                                 <div className="flex justify-between items-center text-gray-300">
@@ -109,7 +109,10 @@ const Contact = () => {
 
                     {/* Right Side: The Form */}
                     <div className="lg:col-span-3 p-8 lg:p-10 bg-white relative rounded-b-[3rem] lg:rounded-b-none lg:rounded-r-[3rem]">
-                        <h2 className="text-3xl font-playfair font-bold text-dark-green mb-2">Send an Enquiry</h2>
+                        <div className="mb-6">
+                            <img src="/logo.png" alt="SA Caterers Logo" className="h-28 w-auto object-contain drop-shadow-md" />
+                        </div>
+                        <h2 className="text-3xl font-bold text-dark-green mb-2">Send an Enquiry</h2>
                         <p className="text-gray-500 font-light mb-6">Fill out the details below, and we'll get back to you with a curated proposal.</p>
 
                         <div className="inline-block bg-cream text-dark-green px-4 py-2 rounded-full text-sm font-medium mb-8 border border-luxury-gold/30 flex items-center gap-2">
@@ -231,7 +234,7 @@ const Contact = () => {
                     className="w-full rounded-[3rem] overflow-hidden shadow-2xl relative border-8 border-white bg-white h-[450px]"
                 >
                     <div className="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
-                        <h3 className="font-playfair font-bold text-dark-green text-xl mb-1">Our Kitchen Base</h3>
+                        <h3 className="font-bold text-dark-green text-xl mb-1">Our Kitchen Base</h3>
                         <p className="text-gray-500 font-light text-sm">Open 9AM - 9PM</p>
                     </div>
 

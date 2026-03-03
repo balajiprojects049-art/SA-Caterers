@@ -37,13 +37,13 @@ const About = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-sm mb-4 block">Welcome to SA Caterers</span>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 drop-shadow-xl">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-xl">
                             Our Legacy
                         </h1>
                         <div className="w-32 h-[2px] bg-luxury-gold mx-auto mb-8 relative">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-luxury-gold bg-dark-green"></div>
                         </div>
-                        <p className="text-xl md:text-2xl text-gray-200 font-light font-poppins drop-shadow-lg">
+                        <p className="text-xl md:text-2xl text-gray-200 font-light drop-shadow-lg">
                             Curating extraordinary culinary experiences since 2010.
                         </p>
                     </motion.div>
@@ -69,7 +69,7 @@ const About = () => {
                             <div className="w-20 h-20 bg-dark-green rounded-full flex items-center justify-center mb-8 text-luxury-gold shadow-lg group-hover:scale-110 transition-transform duration-500">
                                 {item.icon}
                             </div>
-                            <h3 className="text-2xl font-playfair font-bold text-dark-green mb-4">{item.title}</h3>
+                            <h3 className="text-2xl font-bold text-dark-green mb-4">{item.title}</h3>
                             <p className="text-gray-600 leading-relaxed font-light">{item.desc}</p>
                         </motion.div>
                     ))}
@@ -94,8 +94,8 @@ const About = () => {
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-dark-green/80 to-transparent flex flex-col justify-end p-10">
-                                    <div className="text-luxury-gold font-playfair italic text-3xl mb-2">Since</div>
-                                    <div className="text-white font-playfair font-bold text-6xl">2010</div>
+                                    <div className="text-luxury-gold italic text-3xl mb-2">Since</div>
+                                    <div className="text-white font-bold text-6xl">2010</div>
                                 </div>
                             </div>
                             <div className="absolute -bottom-8 -right-8 w-64 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white hidden md:block z-10">
@@ -115,7 +115,7 @@ const About = () => {
                             className="w-full lg:w-1/2 lg:pl-10"
                         >
                             <span className="text-luxury-gold uppercase tracking-[0.2em] font-bold text-sm mb-4 block">Our Story</span>
-                            <h2 className="text-4xl md:text-6xl font-playfair font-bold text-dark-green mb-8 leading-tight">A Tradition of Taste & Elegance</h2>
+                            <h2 className="text-4xl md:text-6xl font-bold text-dark-green mb-8 leading-tight">A Tradition of Taste & Elegance</h2>
                             <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
                                 <p>
                                     Our journey began with a simple passion: to bring the authentic, rich flavors of the Nizam's kitchens to modern celebrations. Over the years, we have evolved, blending traditional recipes with contemporary presentation techniques.
@@ -123,7 +123,7 @@ const About = () => {
                                 <p>
                                     Every dish tells a story. We believe that food is not just sustenance; it is an art form, a conversation starter, and the centerpiece of every memorable gathering.
                                 </p>
-                                <p className="font-medium text-dark-green border-l-4 border-luxury-gold pl-6 italic font-playfair text-xl">
+                                <p className="font-medium text-dark-green border-l-4 border-luxury-gold pl-6 italic text-xl">
                                     "Whether it's a grand wedding for thousands or an intimate gathering, our commitment remains the same—perfection in every bite."
                                 </p>
                             </div>
@@ -142,7 +142,7 @@ const About = () => {
                         className="text-center mb-20"
                     >
                         <span className="text-luxury-gold uppercase tracking-[0.2em] text-sm font-bold mb-3 block">Our Capabilities</span>
-                        <h2 className="text-5xl md:text-6xl font-playfair font-bold text-dark-green">What We Offer</h2>
+                        <h2 className="text-5xl md:text-6xl font-bold text-dark-green">What We Offer</h2>
                         <div className="w-24 h-1 bg-luxury-gold mx-auto mt-8 rounded-full"></div>
                     </motion.div>
 
@@ -167,7 +167,7 @@ const About = () => {
                                 <div className="relative z-10 w-16 h-16 bg-cream rounded-2xl flex items-center justify-center mb-8 text-dark-green group-hover:bg-dark-green group-hover:text-luxury-gold transition-colors duration-300 shadow-sm text-xl border border-gray-100">
                                     {item.icon}
                                 </div>
-                                <h3 className="relative z-10 text-2xl font-playfair font-bold text-dark-green mb-4 group-hover:text-luxury-gold transition-colors">{item.title}</h3>
+                                <h3 className="relative z-10 text-2xl font-bold text-dark-green mb-4 group-hover:text-luxury-gold transition-colors">{item.title}</h3>
                                 <p className="relative z-10 text-gray-500 font-light leading-relaxed">{item.desc}</p>
                             </motion.div>
                         ))}
@@ -188,7 +188,7 @@ const About = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-luxury-gold uppercase tracking-[0.2em] text-sm font-bold mb-4 block">Our Standards</span>
-                            <h2 className="text-4xl md:text-6xl font-playfair font-bold text-dark-green mb-8">Our Food Philosophy</h2>
+                            <h2 className="text-4xl md:text-6xl font-bold text-dark-green mb-8">Our Food Philosophy</h2>
                             <p className="text-gray-600 text-xl font-light leading-relaxed mb-8">
                                 We believe great food starts with the finest ingredients. At SA Caterers, we use <span className="font-medium text-dark-green">fresh produce, premium spices</span>, and carefully sourced raw materials to ensure rich flavors and unparalleled quality.
                             </p>
@@ -211,7 +211,7 @@ const About = () => {
                                             {item.icon}
                                         </div>
                                         <div>
-                                            <h4 className="text-2xl font-playfair font-bold text-dark-green mb-2">{item.title}</h4>
+                                            <h4 className="text-2xl font-bold text-dark-green mb-2">{item.title}</h4>
                                             <p className="text-gray-500 font-light">{item.desc}</p>
                                         </div>
                                     </motion.div>
@@ -233,7 +233,7 @@ const About = () => {
                             />
                             <div className="absolute inset-0 bg-dark-green/20"></div>
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-green p-10">
-                                <p className="text-white font-playfair text-2xl italic text-center drop-shadow-lg">"Quality is never an accident; it is always the result of intelligent effort."</p>
+                                <p className="text-white text-2xl italic text-center drop-shadow-lg">"Quality is never an accident; it is always the result of intelligent effort."</p>
                             </div>
                         </motion.div>
                     </div>
@@ -251,7 +251,7 @@ const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-10 text-white">Experience You Can Trust</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-10 text-white">Experience You Can Trust</h2>
                             <div className="space-y-6">
                                 {[
                                     "Over 10 years of hands-on catering experience",
@@ -276,7 +276,7 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-10 text-white">Why Choose Us?</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-10 text-white">Why Choose Us?</h2>
                             <div className="space-y-6">
                                 {[
                                     { title: "Consistent Taste", desc: "Authentic recipes stay the same every time." },
@@ -284,7 +284,7 @@ const About = () => {
                                     { title: "Punctual Service", desc: "Neat presentation delivered on time." }
                                 ].map((item, i) => (
                                     <div key={i} className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-luxury-gold/30 transition-colors">
-                                        <h4 className="font-playfair font-bold text-luxury-gold text-xl mb-2">{item.title}</h4>
+                                        <h4 className="font-bold text-luxury-gold text-xl mb-2">{item.title}</h4>
                                         <p className="text-gray-400 font-light">{item.desc}</p>
                                     </div>
                                 ))}
@@ -306,7 +306,7 @@ const About = () => {
                         className="max-w-4xl mx-auto mb-16"
                     >
                         <span className="text-luxury-gold uppercase tracking-[0.2em] font-bold text-sm mb-6 block">Ready to start?</span>
-                        <h2 className="text-5xl md:text-7xl font-playfair font-bold mb-8 text-white drop-shadow-md">Let's Make Your Event Special</h2>
+                        <h2 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-md">Let's Make Your Event Special</h2>
                         <p className="text-gray-300 text-xl font-light mb-12 max-w-2xl mx-auto">Planning an event? Let us handle the culinary experience while you focus on making memories.</p>
 
                         <button
@@ -331,7 +331,7 @@ const About = () => {
                                 <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-luxury-gold group-hover:bg-luxury-gold group-hover:text-dark-green group-hover:scale-110 transition-all duration-300 shadow-xl">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-2xl font-playfair font-bold mb-2 text-white">{item.title}</h3>
+                                <h3 className="text-2xl font-bold mb-2 text-white">{item.title}</h3>
                                 <p className="text-gray-400 font-light">{item.desc}</p>
                             </div>
                         ))}

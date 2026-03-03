@@ -65,11 +65,11 @@ const Home = () => {
                             <div className="h-[1px] w-8 md:w-16 bg-luxury-gold"></div>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl lg:text-9xl font-playfair font-bold text-white mb-8 leading-none drop-shadow-2xl">
+                        <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold text-white mb-8 leading-none drop-shadow-2xl">
                             <span className="text-gradient-gold">SA</span> Caterers
                         </h1>
 
-                        <p className="text-gray-200 text-lg md:text-2xl font-light mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-md font-playfair italic">
+                        <p className="text-gray-200 text-lg md:text-2xl font-light mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-md italic">
                             "Where Every Plate Tells a Story of a Tasty Soul"
                         </p>
 
@@ -102,82 +102,108 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            {/* Introduction Section */}
-            <section className="py-20 md:py-32 bg-[#FAFAFA] relative overflow-hidden">
+            {/* Introduction Section - Professional & Premium Layout */}
+            <section className="py-24 md:py-32 bg-[#FFFCF5] relative overflow-hidden">
                 <BackgroundTexture />
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        {/* Text Content */}
-                        <div className="text-left bg-white/90 backdrop-blur-sm p-8 lg:p-12 rounded-3xl shadow-lg border border-white/50 relative z-20">
-                            <div className="mb-6 flex justify-start">
-                                <div className="w-12 h-12 rounded-full bg-luxury-gold/10 flex items-center justify-center">
-                                    <Quote className="text-luxury-gold w-6 h-6" />
+
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-dark-green/[0.02] -skew-x-12 translate-x-1/2 pointer-events-none"></div>
+                <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-luxury-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div className="container mx-auto px-8 md:px-16 lg:px-24 relative z-10">
+                    <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+
+                        <div className="w-full lg:w-3/5">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="relative z-10"
+                            >
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="h-[2px] w-12 bg-luxury-gold"></div>
+                                    <span className="text-luxury-gold uppercase tracking-[0.3em] text-xs font-black">Since 2014</span>
                                 </div>
-                            </div>
 
-                            <span className="text-luxury-gold uppercase tracking-[0.2em] text-xs font-bold mb-4 block">Who We Are</span>
+                                <h2 className="text-4xl md:text-6xl font-black text-dark-green mb-8 leading-[1.1] tracking-tight">
+                                    Best Catering Services <br />
+                                    in <span className="text-luxury-gold italic">Hyderabad</span>
+                                </h2>
 
-                            <h2 className="text-3xl md:text-5xl font-playfair text-dark-green mb-6 leading-tight">
-                                We believe that food is the heart of every <span className="text-luxury-gold italic">celebration.</span>
-                            </h2>
+                                <div className="space-y-6 text-gray-600 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl">
+                                    <p>
+                                        Experience the epitome of catering excellence with <span className="font-bold text-dark-green uppercase tracking-tighter">SA Caterers</span>. We have been redefining celebrations across South India with our signature luxurious and gourmet approach.
+                                    </p>
+                                    <p>
+                                        From royal weddings to prestigious corporate galas, we bring global culinary standards and authentic local charm to every plate. Each dish is a masterpiece, crafted with precision to turn your special moments into extraordinary memories.
+                                    </p>
+                                </div>
 
-                            <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-8 font-light">
-                                At <span className="font-playfair font-bold text-dark-green">SA Caterers</span>, we bring flavors, freshness, and creativity to every table. From intimate gatherings to grand celebrations, our team crafts delicious dishes with high-quality ingredients, customized menus, and exceptional service.
-                            </p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                                    <div className="flex items-center gap-5 p-4 bg-white/50 backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/30 transition-colors group">
+                                        <div className="w-16 h-16 bg-luxury-gold/10 flex items-center justify-center text-luxury-gold transition-colors group-hover:bg-luxury-gold group-hover:text-white">
+                                            <Star size={28} fill="currentColor" />
+                                        </div>
+                                        <div>
+                                            <p className="text-dark-green font-black text-3xl leading-none mb-1">10+</p>
+                                            <p className="text-gray-500 text-[10px] uppercase tracking-[0.2em] font-bold">Years Experience</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-5 p-4 bg-white/50 backdrop-blur-sm border border-luxury-gold/10 hover:border-luxury-gold/30 transition-colors group">
+                                        <div className="w-16 h-16 bg-luxury-gold/10 flex items-center justify-center text-luxury-gold transition-colors group-hover:bg-luxury-gold group-hover:text-white">
+                                            <UtensilsCrossed size={28} />
+                                        </div>
+                                        <div>
+                                            <p className="text-dark-green font-black text-3xl leading-none mb-1">5K+</p>
+                                            <p className="text-gray-500 text-[10px] uppercase tracking-[0.2em] font-bold">Happy Clients</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div className="grid grid-cols-2 gap-4 mb-8">
-                                <ul className="space-y-2">
-                                    {['Fresh Ingredients', 'Professional Team'].map((item, i) => (
-                                        <li key={i} className="flex items-center text-sm text-gray-700">
-                                            <span className="w-2 h-2 rounded-full bg-luxury-gold mr-3"></span>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <ul className="space-y-2">
-                                    {['Customized Menus', 'Timely Service'].map((item, i) => (
-                                        <li key={i} className="flex items-center text-sm text-gray-700">
-                                            <span className="w-2 h-2 rounded-full bg-luxury-gold mr-3"></span>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <Link to="/about" className="inline-block border-b-2 border-luxury-gold pb-1 text-dark-green font-bold uppercase tracking-widest text-sm hover:text-luxury-gold transition-colors">
-                                More About Us
-                            </Link>
+                                <Link to="/about" className="group flex items-center gap-4 w-max">
+                                    <span className="text-dark-green font-black text-lg uppercase tracking-[0.2em] group-hover:text-luxury-gold transition-colors">Know More..</span>
+                                    <div className="w-12 h-12 rounded-full bg-luxury-gold flex items-center justify-center text-white group-hover:bg-dark-green group-hover:translate-x-2 transition-all duration-300 shadow-lg">
+                                        <ArrowRight size={20} />
+                                    </div>
+                                </Link>
+                            </motion.div>
                         </div>
 
-                        {/* Image Content */}
-                        <div className="relative pt-10 md:pt-0">
-                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[500px] lg:h-[550px] w-full">
-                                <img
-                                    src="/indian_chefs_cooking_1772217808721.png"
-                                    alt="Chefs Plating Indian Food"
-                                    className="w-full h-full object-cover"
-                                    style={{ objectPosition: "center", imageRendering: "high-quality", filter: "contrast(1.02) saturate(1.05)" }}
-                                />
-                                <div className="absolute inset-0 bg-dark-green/10 pointer-events-none"></div>
-                            </div>
+                        <div className="w-full lg:w-2/5">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95, x: 30 }}
+                                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1 }}
+                                className="relative"
+                            >
+                                {/* Luxury Frame Decoration */}
+                                <div className="absolute -top-10 -right-10 w-full h-full border-[10px] border-luxury-gold/10 rounded-none -z-10"></div>
+                                <div className="absolute -bottom-10 -left-10 w-full h-full border-[10px] border-dark-green/[0.03] rounded-none -z-10"></div>
 
-                            {/* Experience Badge */}
-                            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl flex items-center space-x-4 max-w-xs animate-fade-in-up">
-                                <div className="w-12 h-12 rounded-full bg-luxury-gold/20 flex items-center justify-center text-luxury-gold">
-                                    <Star size={24} fill="currentColor" />
+                                {/* Main Image Container */}
+                                <div className="relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-[15px] border-white">
+                                    <img
+                                        src="/indian_chefs_cooking_1772217808721.jpeg"
+                                        alt="SA Caterers Professional Chef"
+                                        className="w-full h-auto object-cover"
+                                    />
+                                    <div className="absolute inset-0 border border-luxury-gold/20 m-4"></div>
                                 </div>
-                                <div>
-                                    <span className="block text-xs text-gray-400 uppercase tracking-wider font-bold">Experience</span>
-                                    <p className="text-2xl font-playfair font-bold text-dark-green"><span className="text-luxury-gold">10+</span> Years</p>
+
+                                {/* Floating Trust Badge */}
+                                <div className="absolute top-10 -left-10 bg-dark-green p-5 shadow-2xl z-20 hidden xl:block border border-luxury-gold/20">
+                                    <div className="text-center">
+                                        <p className="text-luxury-gold text-3xl font-black mb-1">15 Years</p>
+                                        <p className="text-white text-[8px] font-bold uppercase tracking-[0.2em] whitespace-nowrap">Experience</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
+
                     </div>
                 </div>
-
-                {/* Decorative background element */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-luxury-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-dark-green/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
             </section>
 
             {/* Services Section */}
@@ -188,7 +214,7 @@ const Home = () => {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
                         <span className="text-luxury-gold uppercase tracking-[0.2em] text-xs font-bold mb-4 block">What We Do</span>
-                        <h2 className="text-4xl md:text-5xl font-playfair leading-tight mb-6">Services We Offer <span className="text-white/50 italic">For Every Occasion</span></h2>
+                        <h2 className="text-4xl md:text-5xl leading-tight mb-6">Services We Offer <span className="text-white/50 italic">For Every Occasion</span></h2>
                         <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                             From intimate gatherings to grand weddings, we bring perfection to your plate with our bespoke catering solutions.
                         </p>
@@ -200,7 +226,7 @@ const Home = () => {
                                 icon: <UtensilsCrossed size={28} />,
                                 title: "Wedding Catering",
                                 desc: "Grand feasts for your special day, handled with royal precision.",
-                                img: "/Wedding Catering.png"
+                                img: "/Wedding Catering.jpeg"
                             },
                             {
                                 icon: <Cake size={28} />,
@@ -235,7 +261,7 @@ const Home = () => {
                                     <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-luxury-gold mb-6 border border-white/10 group-hover:bg-luxury-gold group-hover:text-dark-green transition-all duration-500 transform group-hover:scale-110">
                                         {service.icon}
                                     </div>
-                                    <h3 className="text-xl font-playfair font-bold mb-3 text-white group-hover:text-luxury-gold transition-colors">{service.title}</h3>
+                                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-luxury-gold transition-colors">{service.title}</h3>
                                     <p className="text-gray-300 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-500">
                                         {service.desc}
                                     </p>
@@ -253,7 +279,7 @@ const Home = () => {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-16">
                         <span className="text-luxury-gold uppercase tracking-[0.2em] text-xs font-bold mb-3 block">Explore Our Offerings</span>
-                        <h2 className="text-4xl md:text-5xl font-playfair text-dark-green mb-4">Our Catering Menus</h2>
+                        <h2 className="text-4xl md:text-5xl text-dark-green mb-4">Our Catering Menus</h2>
                         <div className="w-20 h-1 bg-luxury-gold mx-auto mb-6"></div>
                         <p className="text-gray-500 italic text-sm">Select a category to view our carefully curated dishes for every occasion.</p>
                     </div>
@@ -278,7 +304,7 @@ const Home = () => {
 
                                     {/* Content */}
                                     <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-center justify-end text-center pb-10">
-                                        <h3 className="text-xl md:text-2xl font-playfair font-bold text-white drop-shadow-md mb-3 leading-tight">{menu.title}</h3>
+                                        <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-md mb-3 leading-tight">{menu.title}</h3>
                                         <div className="w-8 h-[2px] bg-white/50 group-hover:w-16 group-hover:bg-luxury-gold transition-all duration-300"></div>
                                     </div>
                                 </div>
@@ -298,7 +324,7 @@ const Home = () => {
             {/* Gallery Strip with Marquee effect concept (simplified implementation) */}
             <section className="py-12 bg-green-texture text-center border-t border-luxury-gold/20 overflow-hidden">
                 <div className="mb-8 text-center">
-                    <h3 className="font-playfair text-2xl text-luxury-gold italic">Captured Moments</h3>
+                    <h3 className="text-2xl text-luxury-gold italic">Captured Moments</h3>
                 </div>
                 <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide px-4">
                     {[
@@ -334,7 +360,7 @@ const Home = () => {
                 <div className="container mx-auto px-4 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="text-left">
                         <span className="text-luxury-gold uppercase tracking-[0.2em] text-xs font-bold mb-3 block">Book Your Event</span>
-                        <h2 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-4 leading-none">Ready to create <br /><span className="italic text-luxury-gold">memories?</span></h2>
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-none">Ready to create <br /><span className="italic text-luxury-gold">memories?</span></h2>
                         <p className="text-lg text-gray-200 mb-0 max-w-lg leading-relaxed font-light">
                             Book SA Caterers for your next event and let us serve you an experience of a lifetime.
                         </p>

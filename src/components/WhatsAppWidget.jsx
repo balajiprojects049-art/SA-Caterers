@@ -28,7 +28,7 @@ const WhatsAppWidget = () => {
             </motion.div>
 
             {/* Hover Tooltip Box */}
-            <div className="absolute right-full mr-5 top-1/2 -translate-y-1/2 w-max px-5 py-3 bg-white text-dark-green text-sm font-bold font-poppins rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none hidden md:block border border-gray-100">
+            <div className="absolute right-full mr-5 top-1/2 -translate-y-1/2 w-max px-5 py-3 bg-white text-dark-green text-sm font-bold rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none hidden md:block border border-gray-100">
                 Hi! Need catering help? Let's chat 👋
             </div>
             {/* Small tooltip pointer arrow */}

@@ -32,7 +32,7 @@ const BackgroundTexture = () => {
             {/* Repeating Watermark Text */}
             <div className="absolute inset-0 z-0 opacity-[0.03] flex flex-wrap content-center justify-center gap-24 select-none">
                 {[...Array(10)].map((_, i) => (
-                    <div key={i} className="text-6xl md:text-8xl font-black font-playfair -rotate-12 whitespace-nowrap text-dark-green">
+                    <div key={i} className="text-6xl md:text-8xl font-black -rotate-12 whitespace-nowrap text-dark-green">
                         SA CATERERS
                     </div>
                 ))}

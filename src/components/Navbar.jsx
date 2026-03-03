@@ -36,8 +36,8 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
-                <Link to="/" className="text-2xl md:text-3xl font-bold font-playfair text-luxury-gold drop-shadow-sm">
-                    SA Caterers
+                <Link to="/" className="flex items-center ml-4 md:ml-12">
+                    <img src="/logo.png" alt="SA Caterers" className="h-14 md:h-24 w-auto object-contain hover:scale-105 transition-transform duration-300" />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -46,7 +46,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
-                            className="relative text-white font-poppins text-lg hover:text-luxury-gold transition-colors group tracking-wide"
+                            className="relative text-white text-lg hover:text-luxury-gold transition-colors group tracking-wide"
                         >
                             {link.name}
                             <span className="absolute left-0 bottom-[-5px] w-0 h-[2px] bg-luxury-gold transition-all duration-300 group-hover:w-full"></span>
@@ -82,7 +82,7 @@ const Navbar = () => {
                         className="fixed inset-y-0 right-0 w-[80%] max-w-sm bg-dark-green shadow-xl z-50 flex flex-col p-8 md:hidden border-l border-luxury-gold/30"
                     >
                         <div className="flex justify-between items-center mb-10 border-b border-white/10 pb-4">
-                            <span className="font-playfair text-luxury-gold text-xl font-bold">SA Caterers</span>
+                            <img src="/logo.png" alt="SA Caterers" className="h-16 w-auto object-contain" />
                             <button onClick={() => setIsMobileMenuOpen(false)} className="text-white p-2">
                                 <X size={28} />
                             </button>
@@ -94,7 +94,7 @@ const Navbar = () => {
                                     key={link.name}
                                     to={link.path}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-white text-xl font-poppins pb-2 hover:text-luxury-gold transition-colors border-b border-transparent hover:border-luxury-gold w-max"
+                                    className="text-white text-xl pb-2 hover:text-luxury-gold transition-colors border-b border-transparent hover:border-luxury-gold w-max"
                                 >
                                     {link.name}
                                 </Link>

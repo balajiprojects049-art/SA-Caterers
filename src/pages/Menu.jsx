@@ -134,7 +134,7 @@ const Menu = () => {
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-sm md:text-base mb-4 block drop-shadow-md">
                                 Taste the Tradition
                             </span>
-                            <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 drop-shadow-xl">
+                            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-xl">
                                 Our Royal Menus
                             </h1>
                             <div className="w-24 h-1 bg-luxury-gold mx-auto mb-6 rounded-full"></div>
@@ -157,7 +157,7 @@ const Menu = () => {
                                     key={pkg.id}
                                     onClick={() => setActiveTab(pkg.id)}
                                     className={cn(
-                                        "px-6 py-2.5 rounded-full font-playfair font-semibold tracking-wide transition-all duration-300 border whitespace-nowrap text-sm md:text-base",
+                                        "px-6 py-2.5 rounded-full font-semibold tracking-wide transition-all duration-300 border whitespace-nowrap text-sm md:text-base",
                                         activeTab === pkg.id
                                             ? "bg-dark-green border-dark-green text-luxury-gold shadow-lg transform -translate-y-[1px]"
                                             : "bg-white border-gray-200 text-gray-600 hover:border-luxury-gold hover:text-dark-green hover:bg-luxury-gold/5"
@@ -169,7 +169,7 @@ const Menu = () => {
                             <button
                                 onClick={() => setActiveTab('premium')}
                                 className={cn(
-                                    "px-6 py-2.5 rounded-full font-playfair font-semibold tracking-wide transition-all duration-300 border whitespace-nowrap text-sm md:text-base",
+                                    "px-6 py-2.5 rounded-full font-semibold tracking-wide transition-all duration-300 border whitespace-nowrap text-sm md:text-base",
                                     activeTab === 'premium'
                                         ? "bg-dark-green border-dark-green text-luxury-gold shadow-lg transform -translate-y-[1px]"
                                         : "bg-white border-gray-200 text-gray-600 hover:border-luxury-gold hover:text-dark-green hover:bg-luxury-gold/5"
@@ -186,9 +186,9 @@ const Menu = () => {
                     {activeTab === 'premium' ? (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="text-center mb-16">
-                                <h1 className="text-4xl md:text-6xl font-playfair font-bold text-dark-green mb-4 drop-shadow-sm">Premium Service Tiers</h1>
+                                <h1 className="text-4xl md:text-6xl font-bold text-dark-green mb-4 drop-shadow-sm">Premium Service Tiers</h1>
                                 <div className="w-24 h-1 bg-luxury-gold mx-auto mb-6 rounded-full opacity-80"></div>
-                                <p className="text-gray-600 max-w-2xl mx-auto font-poppins text-lg leading-relaxed">Choose the perfect service level for your special occasion.</p>
+                                <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">Choose the perfect service level for your special occasion.</p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -200,7 +200,7 @@ const Menu = () => {
                                     className="bg-white rounded-[2rem] p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
                                 >
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-gray-100 rounded-bl-[100%] -mr-8 -mt-8 opacity-50 group-hover:scale-110 transition-transform"></div>
-                                    <h3 className="text-3xl font-playfair font-bold text-gray-800 mb-2">Silver</h3>
+                                    <h3 className="text-3xl font-bold text-gray-800 mb-2">Silver</h3>
                                     <p className="text-gray-500 mb-6 text-sm font-medium tracking-wide uppercase">Essential Catering</p>
                                     <div className="w-12 h-1 bg-gray-300 mb-8"></div>
                                     <ul className="space-y-4 mb-8">
@@ -235,7 +235,7 @@ const Menu = () => {
                                 >
                                     <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-yellow-300 via-luxury-gold to-yellow-300"></div>
                                     <div className="absolute top-4 right-4 bg-luxury-gold text-dark-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Popular</div>
-                                    <h3 className="text-4xl font-playfair font-bold text-dark-green mb-2">Gold</h3>
+                                    <h3 className="text-4xl font-bold text-dark-green mb-2">Gold</h3>
                                     <p className="text-luxury-gold mb-6 text-sm font-bold tracking-wide uppercase">Premium Experience</p>
                                     <div className="w-12 h-1 bg-luxury-gold mb-8"></div>
                                     <ul className="space-y-4 mb-8">
@@ -273,7 +273,7 @@ const Menu = () => {
                                     className="bg-white rounded-[2rem] p-8 border border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
                                 >
                                     <div className="absolute top-0 right-0 w-40 h-40 bg-gray-900 rounded-bl-[100%] -mr-10 -mt-10 opacity-5 group-hover:scale-110 transition-transform"></div>
-                                    <h3 className="text-3xl font-playfair font-bold text-gray-900 mb-2">Platinum</h3>
+                                    <h3 className="text-3xl font-bold text-gray-900 mb-2">Platinum</h3>
                                     <p className="text-gray-500 mb-6 text-sm font-medium tracking-wide uppercase">Royal Luxury</p>
                                     <div className="w-12 h-1 bg-gray-800 mb-8"></div>
                                     <ul className="space-y-4 mb-8">
@@ -314,9 +314,9 @@ const Menu = () => {
                                 transition={{ duration: 0.5 }}
                                 className="text-center mb-16"
                             >
-                                <h1 className="text-4xl md:text-6xl font-playfair font-bold text-dark-green mb-4 drop-shadow-sm">{activePackage.label}</h1>
+                                <h1 className="text-4xl md:text-6xl font-bold text-dark-green mb-4 drop-shadow-sm">{activePackage.label}</h1>
                                 <div className="w-24 h-1 bg-luxury-gold mx-auto mb-6 rounded-full opacity-80"></div>
-                                <p className="text-gray-600 max-w-2xl mx-auto font-poppins text-lg leading-relaxed">{activePackage.description || "Craft your perfect menu with our premium selection of authentic dishes."}</p>
+                                <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">{activePackage.description || "Craft your perfect menu with our premium selection of authentic dishes."}</p>
 
                                 <div className="mt-8 flex items-center justify-center p-4 bg-luxury-gold/10 text-dark-green rounded-xl max-w-xl mx-auto border border-luxury-gold/30 shadow-sm">
                                     <Info className="w-5 h-5 mr-3 flex-shrink-0 text-luxury-gold" />
@@ -363,7 +363,7 @@ const Menu = () => {
                                                     <div className={`w-14 h-14 rounded-2xl ${style.iconBg} ${style.iconColor} flex items-center justify-center shadow-inner`}>
                                                         {getCategoryIcon(category.category)}
                                                     </div>
-                                                    <h3 className={`text-xl font-playfair font-bold ${style.titleColor} tracking-wide`}>{category.category}</h3>
+                                                    <h3 className={`text-xl font-bold ${style.titleColor} tracking-wide`}>{category.category}</h3>
                                                 </div>
 
                                                 {/* Items List */}
@@ -385,7 +385,7 @@ const Menu = () => {
                                                                     {isSelected && <Check size={14} className="text-white stroke-[3]" />}
                                                                 </div>
                                                                 <span className={cn(
-                                                                    "font-poppins text-[15px] font-medium transition-colors",
+                                                                    "text-[15px] font-medium transition-colors",
                                                                     isSelected ? "text-gray-900" : "text-gray-700"
                                                                 )}>
                                                                     {item}
@@ -412,7 +412,7 @@ const Menu = () => {
                                                                 }
                                                             </div>
                                                             <span className={cn(
-                                                                "font-poppins text-[15px] font-semibold transition-colors flex items-center gap-1.5",
+                                                                "text-[15px] font-semibold transition-colors flex items-center gap-1.5",
                                                                 otherInputs[category.category]?.isOpen ? "text-dark-green" : "text-gray-700 group-hover/other:text-dark-green"
                                                             )}>
                                                                 <PenLine size={14} />
@@ -438,7 +438,7 @@ const Menu = () => {
                                                                         onChange={(e) => handleOtherChange(category.category, e.target.value)}
                                                                         onClick={(e) => e.stopPropagation()}
                                                                         placeholder={`Type your custom item for ${category.category}...`}
-                                                                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-dark-green/30 bg-white focus:outline-none focus:ring-2 focus:ring-dark-green/30 focus:border-dark-green text-gray-800 placeholder-gray-400 transition-all font-poppins shadow-sm"
+                                                                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-dark-green/30 bg-white focus:outline-none focus:ring-2 focus:ring-dark-green/30 focus:border-dark-green text-gray-800 placeholder-gray-400 transition-all shadow-sm"
                                                                     />
                                                                 </motion.div>
                                                             )}
@@ -469,7 +469,7 @@ const Menu = () => {
                                         {totalSelectionCount}
                                     </div>
                                     <div>
-                                        <span className="font-playfair font-bold text-lg text-luxury-gold block">Your Selection</span>
+                                        <span className="font-bold text-lg text-luxury-gold block">Your Selection</span>
                                         <p className="text-sm text-gray-300">Ready to customize your menu?</p>
                                     </div>
                                 </div>
@@ -516,7 +516,7 @@ const Menu = () => {
                                     <X size={24} />
                                 </button>
 
-                                <h3 className="text-2xl md:text-3xl font-playfair font-bold text-dark-green mb-2">Event Details</h3>
+                                <h3 className="text-2xl md:text-3xl font-bold text-dark-green mb-2">Event Details</h3>
                                 <p className="text-gray-500 mb-6 text-sm">Please provide your details so we can assist you better.</p>
 
                                 <form onSubmit={submitEnquiry} className="space-y-4">

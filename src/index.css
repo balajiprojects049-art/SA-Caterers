@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @import "tailwindcss";
 
@@ -12,18 +12,19 @@
     --color-soft-gold: #FFE090;
     --color-cream: #F9F7F2;
 
-    --font-playfair: 'Playfair Display', serif;
-    --font-poppins: 'Poppins', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
 
     --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
 }
+
 
 :root {
     color-scheme: light;
 }
 
 body {
-    font-family: var(--font-poppins);
+    font-family: var(--font-body);
     background-color: var(--color-cream);
     color: #1a1a1a;
     margin: 0;
@@ -52,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-playfair);
+    font-family: var(--font-heading);
 }
 
 .glass-panel {
