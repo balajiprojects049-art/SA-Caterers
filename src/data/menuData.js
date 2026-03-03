@@ -5,6 +5,10 @@ export const menuPackages = [
         description: 'Our most comprehensive royal vegetarian spread with authentic flavors and live stalls.',
         categories: [
             {
+                category: 'Welcome Snacks (Veg)',
+                items: ['Cheese Ball', 'Harabara Tikka', 'Corn Samosa', 'Mini Kachori', 'Paneer Papad', 'Paneer Stick', 'Paneer Tikka', 'Paneer Pakoda', 'Coriander Bite', 'Sandwich Idly', 'Gold Coin', 'American Sandwich', 'Corn Roll', 'Veg Sangrilla', 'Alu 65', 'Crispy Baby Corn', 'Dragon Roll', 'Shanghai Roll', 'Capsicum Rings', 'Kothmir Wada', 'Veg Manchuria', 'Veg Springroll']
+            },
+            {
                 category: 'Welcome Station (Juices)',
                 items: ['Pine Apple', 'Black Grape', 'Ganga Jamuna', 'Orange', 'Water Melon', 'Fresh Lime Pudina', 'Kairi Panna', 'Guava Mint', 'Guava Prince', 'Red Mistique', 'Kiwi Delight', 'Anar', 'Jamun', 'Strawberry', 'Musk Melon', 'Sitaphal']
             },
@@ -64,27 +68,39 @@ export const menuPackages = [
     {
         id: 'full-non-veg',
         label: 'Full Non Veg Menu',
-        description: 'An extravagant non-vegetarian spread for meat lovers.',
+        description: 'An extravagant non-vegetarian royal spread — from sizzling snacks & kebabs to rich curries, biryanis, and indulgent desserts.',
         categories: [
             {
-                category: 'Non-Veg Starters',
-                items: ['Roasted Prawns', 'Garlic Prawns', 'Mutton Kababs', 'Fish Nuggets', 'Apollo Fish Fry', 'Tandoori Chicken', 'Majestic Chicken', 'KFC Chicken', 'Chicken 65', 'Chicken Manchurian']
+                category: 'Non-Veg Snacks',
+                items: ['Loose Prawns', 'Prawns Fry', 'Apollo Fish', 'Fish Chilly', 'Fish 65', 'Chicken 65', 'Chicken Majestic', 'Kandhari Chicken', 'Kanta Chicken', 'Stick Chicken', 'KFC Chicken', 'Chicken Manchuria', 'Chicken Lolypop', 'Pepper Chicken', 'Chilli Chicken Fry', 'Mutton Manchuria', 'Mutton 65', 'Dum Ka Mutton', 'Finger Mutton', 'Pathar ka Mutton', 'Chilli Mutton']
             },
             {
-                category: 'Chicken Specialties',
-                items: ['Achari Chicken', 'Lemon Chicken', 'Khandari Chicken', 'Moglai Chicken', 'Butter Chicken', 'Methi Chicken']
+                category: 'Kababs',
+                items: ['Tandoori Chicken', 'Chicken Tikka', 'Tangdi Kabab', 'Malai Kabab', 'Kalimirchi Kabab', 'Boti Kabab', 'Garlic Chicken Kabab', 'Tandoori Fish Tikka', 'Tandoori Prawns', 'Mutton Shikampuri Kabab', 'Mutton Sheek Kabab', 'Mutton Pahadi Kabab', 'Mutton Reshmi Kabab', 'Lemon Chicken Kabab']
             },
             {
-                category: 'Mutton Specialties',
-                items: ['Mutton Dum Biryani', 'Mutton Marag', 'Mutton Curry', 'Gongura Mutton']
+                category: 'Mughlai Chicken Special',
+                items: ['Chicken Curry', 'Butter Chicken', 'Chicken Mughlai', 'Malai Chicken', 'Ginger Chicken', 'Garlic Chicken', 'Dam ka Chicken', 'Kalari Chicken', 'Chicken Do Pyaza', 'Chicken Jalfrezi', 'Hariyali Chicken', 'Tandoori Chicken Masala', 'Achari Chicken', 'Hyderabadi Chicken', 'Chicken Rogan Juice', 'Chicken Nawabi', 'Punjabi Chicken', 'Chicken Chat Pata', 'Chicken Tikka Masala', 'Green Chicken']
             },
             {
-                category: 'Alcohol Starters',
-                items: ['Boiled Peanuts', 'Masala Peanuts', 'Cut Mirchi', 'Green Salad']
+                category: 'Mutton Ka Masthi',
+                items: ['Mutton Curry', 'Mutton Masala', 'Butter Mutton Masala', 'Mutton Nawabi', 'Dam Ka Mutton', 'Afgani Mutton', 'Kadai Mutton', 'Mutton Do Pyaza', 'Methi Mutton', 'Mutton Nahari', 'Malai Mutton', 'Mutton Chat Masala', 'Ginger Mutton', 'Garlic Mutton', 'Karali Mutton']
             },
             {
-                category: 'Live Stalls',
-                items: ['Popcorn', 'Sugar Candy', 'Chocolate Fountain', 'Smoke Biscuit']
+                category: 'Sea Food',
+                items: ['Fish Curry', 'Fish Masala', 'Kadai Fish', 'Methi Fish Masala', 'Coconut Fish', 'Prawn Masala', 'Prawn Curry', 'Prawn Do Pyaza']
+            },
+            {
+                category: 'Nawabi Biryani',
+                items: ['Chicken Dam Biryani', 'Chicken Zafrani Biryani', 'Mutton Dam Biryani', 'Mutton Zafrani Biryani', 'Egg Dum Ki Biryani', 'Mandi Rice', 'Fish Dum Ki Biryani', 'Prawn Biryani']
+            },
+            {
+                category: 'Desserts',
+                items: ['Shahi Tukda', 'African Pudding', 'Mango Rabdi', 'Malai Kesar Rabdi', 'Litchi Rabdi', 'Badam Kun', 'Kaddu Ka Halwa', 'Gajar Ka Halwa', 'Sunrise Pudding', 'Cream Fruit', 'Custard Fruit', 'Double Ka Meetha', 'Anjeer Ka Meetha', 'Gulab Jamun', 'Mango Delight', 'Kunefeh', 'Baklava']
+            },
+            {
+                category: 'Breads & Rotis',
+                items: ['Romali Roti', 'Tandoori Roti', 'Butter Naan', 'Masala Kulcha', 'Baby Naan', 'Lacha Parota', 'Gobi Kulcha', 'Keema Naan', 'Paneer Kulcha', 'Puri', 'Hariyali Naan', 'Garlic Naan', 'Masala Naan']
             }
         ]
     },

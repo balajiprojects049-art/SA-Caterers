@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza, X } from 'lucide-react';
+import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza, X, Plus, PenLine } from 'lucide-react';
 import BackgroundTexture from '../components/BackgroundTexture';
 import { menuPackages } from '../data/menuData';
 import { cn } from '../lib/utils';
@@ -25,15 +25,37 @@ const getCategoryIcon = (categoryName) => {
 const Menu = () => {
     const [activeTab, setActiveTab] = useState(menuPackages[0].id);
     const [selectedItems, setSelectedItems] = useState([]);
+    const [otherInputs, setOtherInputs] = useState({}); // { [categoryName]: { isOpen: bool, value: string } }
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [formData, setFormData] = useState({ name: '', phone: '', date: '', location: '', guests: '' });
 
     const activePackage = menuPackages.find(p => p.id === activeTab) || menuPackages[0];
 
+    // Count of categories that have a non-empty "Others" custom text
+    const othersCount = Object.values(otherInputs).filter(o => o.isOpen && o.value.trim() !== '').length;
+    const totalSelectionCount = selectedItems.length + othersCount;
+
     const handleItemToggle = (item) => {
         setSelectedItems(prev =>
             prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
         );
+    };
+
+    const handleOtherToggle = (categoryName) => {
+        setOtherInputs(prev => ({
+            ...prev,
+            [categoryName]: {
+                isOpen: !prev[categoryName]?.isOpen,
+                value: prev[categoryName]?.value || ''
+            }
+        }));
+    };
+
+    const handleOtherChange = (categoryName, value) => {
+        setOtherInputs(prev => ({
+            ...prev,
+            [categoryName]: { ...prev[categoryName], value }
+        }));
     };
 
     const handleFormChange = (e) => {
@@ -42,8 +64,8 @@ const Menu = () => {
     };
 
     const handleEnquiryClick = () => {
-        if (selectedItems.length === 0) {
-            alert("Please select some items to enquire about.");
+        if (totalSelectionCount === 0) {
+            alert("Please select some items or add a custom request to enquire.");
             return;
         }
         setIsFormOpen(true);
@@ -65,8 +87,21 @@ const Menu = () => {
 
         message += `*MENU SELECTION*\n`;
         message += `🏷️ *Package:* ${activePackage.label}\n`;
-        message += `📋 *Items Selected (${selectedItems.length}):*\n`;
-        message += selectedItems.map(item => `   ▪ ${item}`).join('\n');
+        if (selectedItems.length > 0) {
+            message += `📋 *Items Selected (${selectedItems.length}):*\n`;
+            message += selectedItems.map(item => `   ▪ ${item}`).join('\n');
+            message += `\n`;
+        }
+
+        // Include any custom "Others" requests
+        const customRequests = Object.entries(otherInputs)
+            .filter(([, o]) => o.isOpen && o.value.trim() !== '')
+            .map(([cat, o]) => `   ▪ [${cat}] ${o.value.trim()}`);
+        if (customRequests.length > 0) {
+            message += `\n✏️ *Custom Requests (${customRequests.length}):*\n`;
+            message += customRequests.join('\n');
+            message += `\n`;
+        }
 
         message += `\n---------------------------------------\n`;
         message += `_Sent via SA Caterers Website_`;
@@ -358,6 +393,57 @@ const Menu = () => {
                                                             </div>
                                                         );
                                                     })}
+
+                                                    {/* Others Option */}
+                                                    <div className="pt-2 border-t border-dashed border-gray-200 mt-2">
+                                                        <div
+                                                            onClick={() => handleOtherToggle(category.category)}
+                                                            className="flex items-center cursor-pointer group/other py-1"
+                                                        >
+                                                            <div className={cn(
+                                                                "w-5 h-5 rounded-[4px] border flex items-center justify-center mr-3 transition-all duration-200 shrink-0",
+                                                                otherInputs[category.category]?.isOpen
+                                                                    ? "bg-dark-green border-dark-green"
+                                                                    : "bg-white border-gray-500 group-hover/other:border-dark-green"
+                                                            )}>
+                                                                {otherInputs[category.category]?.isOpen
+                                                                    ? <Check size={14} className="text-white stroke-[3]" />
+                                                                    : <Plus size={12} className="text-gray-600 group-hover/other:text-dark-green" />
+                                                                }
+                                                            </div>
+                                                            <span className={cn(
+                                                                "font-poppins text-[15px] font-semibold transition-colors flex items-center gap-1.5",
+                                                                otherInputs[category.category]?.isOpen ? "text-dark-green" : "text-gray-700 group-hover/other:text-dark-green"
+                                                            )}>
+                                                                <PenLine size={14} />
+                                                                Others (specify below)
+                                                            </span>
+                                                        </div>
+
+                                                        {/* Animated input field */}
+                                                        <AnimatePresence>
+                                                            {otherInputs[category.category]?.isOpen && (
+                                                                <motion.div
+                                                                    key={"other-input-" + category.category}
+                                                                    initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                                                                    animate={{ opacity: 1, height: 'auto', marginTop: 10 }}
+                                                                    exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                                                                    transition={{ duration: 0.25 }}
+                                                                    className="overflow-hidden"
+                                                                >
+                                                                    <input
+                                                                        type="text"
+                                                                        autoFocus
+                                                                        value={otherInputs[category.category]?.value || ''}
+                                                                        onChange={(e) => handleOtherChange(category.category, e.target.value)}
+                                                                        onClick={(e) => e.stopPropagation()}
+                                                                        placeholder={`Type your custom item for ${category.category}...`}
+                                                                        className="w-full px-4 py-2.5 text-sm rounded-xl border border-dark-green/30 bg-white focus:outline-none focus:ring-2 focus:ring-dark-green/30 focus:border-dark-green text-gray-800 placeholder-gray-400 transition-all font-poppins shadow-sm"
+                                                                    />
+                                                                </motion.div>
+                                                            )}
+                                                        </AnimatePresence>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         );
@@ -370,7 +456,7 @@ const Menu = () => {
 
                 {/* Floating Summary Bar */}
                 <AnimatePresence>
-                    {selectedItems.length > 0 && (
+                    {totalSelectionCount > 0 && (
                         <motion.div
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -380,7 +466,7 @@ const Menu = () => {
                             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                                 <div className="flex items-center space-x-4">
                                     <div className="bg-luxury-gold text-dark-green font-bold w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
-                                        {selectedItems.length}
+                                        {totalSelectionCount}
                                     </div>
                                     <div>
                                         <span className="font-playfair font-bold text-lg text-luxury-gold block">Your Selection</span>
@@ -390,7 +476,7 @@ const Menu = () => {
 
                                 <div className="flex items-center gap-3 w-full md:w-auto">
                                     <button
-                                        onClick={() => setSelectedItems([])}
+                                        onClick={() => { setSelectedItems([]); setOtherInputs({}); }}
                                         className="px-5 py-2.5 rounded-full border border-gray-500 text-gray-300 hover:bg-white/10 hover:text-white hover:border-white transition-colors text-sm font-medium flex-1 md:flex-none whitespace-nowrap"
                                     >
                                         Clear
