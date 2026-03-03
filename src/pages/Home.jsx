@@ -146,7 +146,7 @@ const Home = () => {
                                             <Star size={28} fill="currentColor" />
                                         </div>
                                         <div>
-                                            <p className="text-dark-green font-black text-3xl leading-none mb-1">10+</p>
+                                            <p className="text-dark-green font-black text-3xl leading-none mb-1">15+</p>
                                             <p className="text-gray-500 text-[10px] uppercase tracking-[0.2em] font-bold">Years Experience</p>
                                         </div>
                                     </div>

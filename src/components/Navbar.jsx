@@ -37,7 +37,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center ml-4 md:ml-12">
-                    <img src="/logo.png" alt="SA Caterers" className="h-14 md:h-24 w-auto object-contain hover:scale-105 transition-transform duration-300" />
+                    <img src="/logo.png" alt="SA Caterers" className="h-20 md:h-32 w-auto object-contain hover:scale-105 transition-transform duration-300" />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -82,7 +82,7 @@ const Navbar = () => {
                         className="fixed inset-y-0 right-0 w-[80%] max-w-sm bg-dark-green shadow-xl z-50 flex flex-col p-8 md:hidden border-l border-luxury-gold/30"
                     >
                         <div className="flex justify-between items-center mb-10 border-b border-white/10 pb-4">
-                            <img src="/logo.png" alt="SA Caterers" className="h-16 w-auto object-contain" />
+                            <img src="/logo.png" alt="SA Caterers" className="h-24 w-auto object-contain" />
                             <button onClick={() => setIsMobileMenuOpen(false)} className="text-white p-2">
                                 <X size={28} />
                             </button>

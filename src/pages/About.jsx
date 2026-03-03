@@ -254,7 +254,7 @@ const About = () => {
                             <h2 className="text-4xl md:text-5xl font-bold mb-10 text-white">Experience You Can Trust</h2>
                             <div className="space-y-6">
                                 {[
-                                    "Over 10 years of hands-on catering experience",
+                                    "Over 15 years of hands-on catering experience",
                                     "Skilled chefs with regional & multi-cuisine expertise",
                                     "Well-trained professional service staff",
                                     "Timely delivery & flawless event execution",
@@ -319,9 +319,9 @@ const About = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20">
                         {[
-                            { icon: <Phone size={28} />, title: "Call Us", desc: "8555969207 / 9030927239", link: "tel:+919030927239" },
-                            { icon: <Mail size={28} />, title: "Email", desc: "staffarccaterings@gmail.com", link: "mailto:staffarccaterings@gmail.com" },
-                            { icon: <MapPin size={28} />, title: "Location", desc: "Secunderabad, Hyderabad", link: null }
+                            { icon: <Phone size={28} />, title: "Call Us", desc: "8801002808 / 9030927239", link: "tel:+919030927239" },
+                            { icon: <Mail size={28} />, title: "Email", desc: "sa.hyderabadcaterers@gmail.com", link: "mailto:[sa.hyderabadcaterers@gmail.com]" },
+                            { icon: <MapPin size={28} />, title: "Location", desc: "Plot No. 49, 1st Floor, P & T Colony, Karkhana, Secunderabad, Telangana - 500009", link: null }
                         ].map((item, idx) => (
                             <div
                                 key={idx}
