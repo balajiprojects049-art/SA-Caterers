@@ -12,7 +12,7 @@ const Footer = () => {
             // Open user's email client to send the subscription request
             const subject = encodeURIComponent("New Newsletter Subscription Request");
             const body = encodeURIComponent(`Hello SA Caterers,\n\nPlease add my email address to your newsletter subscription list.\n\nMy Email: ${email}\n\nThank you!`);
-            window.location.href = `mailto:info@sahcaterers.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:sa.hyderabadcaterers@gmail.com?subject=${subject}&body=${body}`;
 
             setSubscribed(true);
             setEmail('');
@@ -115,7 +115,7 @@ const Footer = () => {
                                 <div className="w-8 h-8 rounded-full bg-luxury-gold/10 flex items-center justify-center mr-4 flex-shrink-0">
                                     <Mail className="text-luxury-gold" size={16} />
                                 </div>
-                                <a href="mailto:info@sahcaterers.com" className="text-gray-400 hover:text-luxury-gold transition-colors text-[15px]">info@sahcaterers.com</a>
+                                <a href="mailto:sa.hyderabadcaterers@gmail.com" className="text-gray-400 hover:text-luxury-gold transition-colors text-[15px]">sa.hyderabadcaterers@gmail.com</a>
                             </li>
                         </ul>
                     </div>
