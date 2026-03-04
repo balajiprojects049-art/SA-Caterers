@@ -294,6 +294,69 @@ const About = () => {
                 </div>
             </div>
 
+            {/* Meet Our Founder Section */}
+            <div className="py-24 bg-white relative overflow-hidden">
+                <div className="container mx-auto px-8 md:px-12 lg:px-24 xl:px-32 relative z-10">
+                    <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                        <div className="w-full lg:w-1/2">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="relative"
+                            >
+                                <div className="absolute -top-10 -left-10 w-full h-full border-[10px] border-luxury-gold/5 rounded-none -z-10"></div>
+                                <div className="relative shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-[15px] border-white">
+                                    <img
+                                        src="/Founder.png"
+                                        alt="SA Caterers Founder"
+                                        className="w-full h-auto object-cover"
+                                    />
+                                    <div className="absolute inset-0 border border-luxury-gold/10 m-4"></div>
+                                </div>
+                                <div className="absolute -bottom-6 -right-6 bg-dark-green p-6 shadow-2xl z-20">
+                                    <p className="text-luxury-gold text-sm font-bold uppercase tracking-[0.2em]">The Visionary</p>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        <div className="w-full lg:w-1/2">
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-sm mb-4 block">Meet Our Founder</span>
+                                <h2 className="text-4xl md:text-6xl font-black text-dark-green mb-8 leading-tight">The Passion Behind <br />Every Plate</h2>
+                                <div className="w-20 h-1.5 bg-luxury-gold mb-10"></div>
+
+                                <div className="space-y-6 text-gray-700">
+                                    <p className="text-xl font-bold text-dark-green italic">"Excellence is not a skill, it is an attitude."</p>
+                                    <p className="text-lg leading-relaxed font-light">
+                                        As the founder and owner of SA Caterers, he has spent over 15 years building a legacy of culinary excellence in Hyderabad. His journey started with a deep-rooted love for traditional flavors and a desire to provide professional, high-end catering services.
+                                    </p>
+                                    <p className="text-lg leading-relaxed font-medium text-dark-green">
+                                        "My goal has always been to treat every event as if it were my own. At SA Caterers, we don't just serve food; we serve memories, traditions, and a promise of quality that our clients can always trust."
+                                    </p>
+                                </div>
+
+                                <div className="mt-12 flex items-center gap-6">
+                                    <div className="w-16 h-16 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold shadow-sm">
+                                        <Award size={32} />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-3xl font-black text-dark-green uppercase leading-none">Founder & Owner</h4>
+                                        <p className="text-gray-500 font-bold uppercase tracking-widest text-xs mt-2">SA Caterers Hyderabad</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* CTA Footer Section */}
             <div className="bg-dark-green py-16 text-white relative overflow-hidden border-t border-white/10">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-luxury-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
