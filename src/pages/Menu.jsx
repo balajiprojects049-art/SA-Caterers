@@ -336,6 +336,19 @@ const Menu = () => {
                                             </p>
                                         </motion.div>
                                     )}
+
+                                    {activeTab === 'non-veg-budget' && (
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl max-w-2xl flex items-center shadow-sm"
+                                        >
+                                            <Info className="text-blue-500 mr-3 shrink-0" size={20} />
+                                            <p className="text-blue-800 text-sm font-medium italic">
+                                                Any specific requirements, we will arrange. Please select your menu to discuss further.
+                                            </p>
+                                        </motion.div>
+                                    )}
                                 </div>
                             </motion.div>
 
@@ -478,6 +491,23 @@ const Menu = () => {
                                         >
                                             <Plus className="text-white group-hover:rotate-90 transition-transform" size={24} />
                                             <span className="text-lg">Get Price Quotation for Veg Below 200</span>
+                                        </button>
+                                    </motion.div>
+                                )}
+
+                                {activeTab === 'non-veg-budget' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.8 }}
+                                        className="col-span-full mt-12 flex justify-center"
+                                    >
+                                        <button
+                                            onClick={handleEnquiryClick}
+                                            className="bg-[#1e1b32] text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 shadow-2xl hover:bg-black transition-all hover:-translate-y-1 active:scale-95 group"
+                                        >
+                                            <Plus className="text-white group-hover:rotate-90 transition-transform" size={24} />
+                                            <span className="text-lg">Get Price Quotation for Non Veg Below 200</span>
                                         </button>
                                     </motion.div>
                                 )}

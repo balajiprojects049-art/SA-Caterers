@@ -158,11 +158,56 @@ export const menuPackages = [
     {
         id: 'non-veg-budget',
         label: 'Non Veg Below 200',
-        description: 'Economical non-vegetarian options.',
+        description: 'Rich non-vegetarian menu for gatherings under 200 members.',
         categories: [
-            { category: 'Starters', items: ['Chicken Pakoda', 'Chicken 65', 'Fish Fry'] },
-            { category: 'Main Course', items: ['Chicken Biryani (Special/Dum)', 'Mutton Biryani (Zafrani/Dum)'] },
-            { category: 'Curries', items: ['Dum Ka Chicken', 'Methi Chicken', 'Mutton Curry (Special)'] }
+            {
+                category: 'Welcome Juices',
+                items: ['Strawberry Crush', 'Fruit Punch', 'Pineapple Crush', 'Litchi Crush', 'Mango Crush', 'Orange Crush']
+            },
+            {
+                category: 'Veg Starters',
+                items: ['Breaded Spring Rolls', 'Crispy Veg', 'Cheese Balls', 'Paneer Kababs', 'Veg Bullets', 'Hara Bara Kababs', 'Manchuria', 'Veg Cutlet']
+            },
+            {
+                category: 'Non Veg Starters',
+                items: ['Roasted Prawns', 'Garlic Prawns', 'Mutton Kababs', 'Fish Nuggets', 'Apollo Fish Fry', 'Tandoori Chicken', 'Stick Chicken', 'Majestic Chicken', 'KFC Chicken', 'Chicken Manchurian', 'Chicken 65', 'Chicken Pakoda']
+            },
+            {
+                category: 'Main Course (NV)',
+                items: ['Mutton Biryani (Zafrani or Dum)', 'Tiger Prawn Biryani', 'Fish Biryani', 'Chicken Dum Biryani', 'Egg Biryani']
+            },
+            {
+                category: 'NV Curries',
+                items: ['Achari Chicken Curry', 'Dum Ka Chicken', 'Mutton Curry', 'Butter Chicken', 'Khandari Chicken', 'Lemon Butter Chicken', 'Tomato Chicken', 'Mogalai Chicken', 'Methi Chicken', 'Soya Chicken', 'Fish Curry']
+            },
+            {
+                category: 'Rotis',
+                items: ['Puri', 'Rumali Roti']
+            },
+            {
+                category: 'Veg Rice & Biryani',
+                items: ['White Rice', 'Bagara Rice', 'Veg Dum Biryani', 'Thai Biryani', 'Pulav']
+            },
+            {
+                category: 'Fry Items (Veg)',
+                items: ['Bhendi Fry', 'Gobi Fry', 'Aloo 65 Fry', 'Donda Fry', 'Cut Mirchi', 'Boondi', 'Karap Pusa']
+            },
+            {
+                category: 'Veg Curries & Sides',
+                items: ['Butter Paneer Masala', 'Malai Kofta', 'Veg Navaratna Mix', 'Milli Maker Kheema', 'Chole Masala Curry', 'Sambar', 'Palakura Pappu', 'Fryms', 'Pachadi', 'Raitha', 'Mirchi Ka Salan']
+            },
+            {
+                category: 'Sweets',
+                items: ['Khova Gulab Jamun', 'Bobatlu', 'Purnam Burelu', 'Kaddu Ki Kheer', 'Fruit Cream', 'Fruit Salad', 'Pineapple Sweet', 'Gajar Ka Halwa', 'Double Ka Meetha']
+            },
+            {
+                category: 'Ice Cream',
+                items: ['Vanilla', 'Strawberry', 'Butterscotch', 'Others']
+            },
+            {
+                category: 'Beverages',
+                items: ['Water Bottles or Cool Cans']
+            }
         ]
     }
 ];
