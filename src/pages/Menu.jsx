@@ -318,9 +318,24 @@ const Menu = () => {
                                 <div className="w-24 h-1 bg-luxury-gold mx-auto mb-6 rounded-full opacity-80"></div>
                                 <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">{activePackage.description || "Craft your perfect menu with our premium selection of authentic dishes."}</p>
 
-                                <div className="mt-8 flex items-center justify-center p-4 bg-luxury-gold/10 text-dark-green rounded-xl max-w-xl mx-auto border border-luxury-gold/30 shadow-sm">
-                                    <Info className="w-5 h-5 mr-3 flex-shrink-0 text-luxury-gold" />
-                                    <p className="text-sm font-medium">Note: Cleaning staff and Crockery not included. Transport charges extra.</p>
+                                <div className="mt-8 flex flex-col gap-4 items-center">
+                                    <div className="flex items-center justify-center p-4 bg-luxury-gold/10 text-dark-green rounded-xl max-w-xl mx-auto border border-luxury-gold/30 shadow-sm">
+                                        <Info className="w-5 h-5 mr-3 flex-shrink-0 text-luxury-gold" />
+                                        <p className="text-sm font-medium">Note: Cleaning staff and Crockery not included. Transport charges extra.</p>
+                                    </div>
+
+                                    {activeTab === 'veg-budget' && (
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl max-w-2xl flex items-center shadow-sm"
+                                        >
+                                            <Info className="text-blue-500 mr-3 shrink-0" size={20} />
+                                            <p className="text-blue-800 text-sm font-medium italic">
+                                                Any additional items required which are not in the above list, we will arrange everything.
+                                            </p>
+                                        </motion.div>
+                                    )}
                                 </div>
                             </motion.div>
 
@@ -449,6 +464,23 @@ const Menu = () => {
                                         );
                                     })}
                                 </motion.div>
+
+                                {activeTab === 'veg-budget' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.8 }}
+                                        className="col-span-full mt-12 flex justify-center"
+                                    >
+                                        <button
+                                            onClick={handleEnquiryClick}
+                                            className="bg-[#1e1b32] text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 shadow-2xl hover:bg-black transition-all hover:-translate-y-1 active:scale-95 group"
+                                        >
+                                            <Plus className="text-white group-hover:rotate-90 transition-transform" size={24} />
+                                            <span className="text-lg">Get Price Quotation for Veg Below 200</span>
+                                        </button>
+                                    </motion.div>
+                                )}
                             </AnimatePresence>
                         </>
                     )}

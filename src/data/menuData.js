@@ -107,12 +107,52 @@ export const menuPackages = [
     {
         id: 'veg-budget',
         label: 'Veg Below 200',
-        description: 'Budget-friendly vegetarian menu for small gatherings.',
+        description: 'Comprehensive vegetarian menu for gatherings under 200 members.',
         categories: [
-            { category: 'Favored Rice', items: ['Pulihora', 'Coconut Rice', 'Pudina Rice'] },
-            { category: 'Fry Items', items: ['Bhendi Fry', 'Gobi Fry', 'Aloo 65 Fry'] },
-            { category: 'Curries', items: ['Butter Paneer Masala', 'Vankaya Masala Curry', 'Guthi Vankaya'] },
-            { category: 'Basics', items: ['White Rice', 'Sambar', 'Curd', 'Salad'] }
+            {
+                category: 'Welcome Juice',
+                items: ['Strawberry Crush', 'Pineapple Crush', 'Litchi Crush', 'Mango Crush', 'Mixed Fruit Juice', 'Fruit Punch']
+            },
+            {
+                category: 'Veg Starters',
+                items: ['Breaded Spring Rolls', 'Veg Bullet', 'Cheese Balls', 'Corn Samosa', 'French Fries', 'Hara Bara Tikka', 'Paneer Tikka', 'Veg Manchurian', 'Crispy Veg', 'Veg Cutlet']
+            },
+            {
+                category: 'Main Course (Rice)',
+                items: ['Veg Biryani', 'Thai Biryani', 'Veg Pulao', 'Kaju Rice', 'Bagara Rice', 'Zeera Rice', 'Khichdi']
+            },
+            {
+                category: 'Flavoured Rice',
+                items: ['Pulihora (Lemon/Tamarind/Gongura)', 'Coconut Rice', 'Pudina Rice', 'Karvepak Rice', 'Curd Rice']
+            },
+            {
+                category: 'Fry Items',
+                items: ['Bhendi Fry', 'Gobi Fry', 'Aloo 65 Fry', 'Donda Fry', 'Cut Mirchi', 'Boondi', 'Karap Pusa']
+            },
+            {
+                category: 'Curries',
+                items: ['Butter Paneer Masala', 'Vankaya Masala Curry', 'Guthi Vankaya', 'Chole Masala', 'Aloo Kurma', 'Malai Kofta', 'Mixed Veg Navratan Curry', 'Millimaker Kheema', 'Tomato Masala Curry', 'Mirchi Masala']
+            },
+            {
+                category: 'Rotis',
+                items: ['Rumali Roti', 'Puri']
+            },
+            {
+                category: 'Sides & Accompaniments',
+                items: ['Palakura Pappu', 'Mulakayala Sambar', 'Rasam', 'Zeera Dal', 'Regular Dal', 'Perugu Charu', 'White Rice', 'Roti Pachadi', 'Fryms', 'Papad', 'Raitha', 'Curd', 'Salad']
+            },
+            {
+                category: 'Sweets',
+                items: ['Khova Gulab Jamun', 'Bobatlu', 'Purnam Burelu', 'Laddu', 'Gajar Ka Halwa', 'Kesari Halwa', 'Double Ka Meetha', 'Pineapple Kheer', 'Kaddu Ki Kheer', 'Kurbani Sweet', 'Fruit Salad', 'Fruit Cream']
+            },
+            {
+                category: 'Ice Cream',
+                items: ['Vanilla', 'Strawberry', 'Butterscotch', 'Others']
+            },
+            {
+                category: 'Beverages',
+                items: ['Water Bottles or Cool Cans']
+            }
         ]
     },
     {
