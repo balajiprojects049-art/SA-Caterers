@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, UtensilsCrossed, Briefcase, Cake, Star, Quote } from 'lucide-react';
+import { ArrowRight, UtensilsCrossed, Briefcase, Cake, Star, Quote, ChefHat } from 'lucide-react';
 import BackgroundTexture from '../components/BackgroundTexture';
 
 const Home = () => {
