@@ -44,7 +44,7 @@ const About = () => {
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-luxury-gold bg-dark-green"></div>
                         </div>
                         <p className="text-xl md:text-2xl text-gray-200 font-light drop-shadow-lg">
-                            Curating extraordinary culinary experiences since 2010.
+                            Curating extraordinary culinary experiences since 2014.
                         </p>
                     </motion.div>
                 </div>
@@ -95,7 +95,7 @@ const About = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-dark-green/80 to-transparent flex flex-col justify-end p-10">
                                     <div className="text-luxury-gold italic text-3xl mb-2">Since</div>
-                                    <div className="text-white font-bold text-6xl">2010</div>
+                                    <div className="text-white font-bold text-6xl">2014</div>
                                 </div>
                             </div>
                             <div className="absolute -bottom-8 -right-8 w-64 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white hidden md:block z-10">
