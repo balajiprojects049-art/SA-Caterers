@@ -109,9 +109,6 @@ const Contact = () => {
 
                     {/* Right Side: The Form */}
                     <div className="lg:col-span-3 p-8 lg:p-10 bg-white relative rounded-b-[3rem] lg:rounded-b-none lg:rounded-r-[3rem]">
-                        <div className="mb-6">
-                            <img src="/logo.png" alt="SA Caterers Logo" className="h-28 w-auto object-contain drop-shadow-md" />
-                        </div>
                         <h2 className="text-3xl font-bold text-dark-green mb-2">Send an Enquiry</h2>
                         <p className="text-gray-500 font-light mb-6">Fill out the details below, and we'll get back to you with a curated proposal.</p>
 

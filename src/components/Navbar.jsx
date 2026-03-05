@@ -53,7 +53,7 @@ const Navbar = () => {
 
                     {/* Logo */}
                     <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src="/logo.png" alt="SA Caterers" style={{ height: showSolid ? '64px' : '80px', width: 'auto', objectFit: 'contain', transition: 'height 0.3s ease' }} />
+                        <img src="/logo.png" alt="SA Caterers" className={`nav-logo ${showSolid ? 'scrolled' : ''}`} />
                     </Link>
 
                     {/* Desktop Links */}
@@ -238,7 +238,23 @@ const Navbar = () => {
 
             {/* ─── Responsive desktop styles ─── */}
             <style>{`
+                .nav-logo {
+                    width: auto;
+                    object-fit: contain;
+                    transition: height 0.3s ease;
+                    height: 80px;
+                }
+                .nav-logo.scrolled {
+                    height: 64px;
+                }
+
                 @media (min-width: 768px) {
+                    .nav-logo {
+                        height: 130px;
+                    }
+                    .nav-logo.scrolled {
+                        height: 96px;
+                    }
                     .desktop-nav-links {
                         display: flex !important;
                         align-items: center;
