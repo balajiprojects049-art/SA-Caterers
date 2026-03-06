@@ -41,12 +41,26 @@ const Menu = () => {
             }
         }
     }, [location.search]);
+
+
     const [premiumDiet, setPremiumDiet] = useState('vegetarian');
     const [selectedItems, setSelectedItems] = useState([]);
     const [otherInputs, setOtherInputs] = useState({}); // { [categoryName]: { isOpen: bool, value: string } }
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [formData, setFormData] = useState({ name: '', phone: '', date: '', location: '', guests: '' });
     const [selectedPremiumPlan, setSelectedPremiumPlan] = useState(null); // { name: string, diet: string, items: string[] }
+
+    // Prevent background scrolling when modal is open
+    useEffect(() => {
+        if (isFormOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isFormOpen]);
 
     const activePackage = menuPackages.find(p => p.id === activeTab) || menuPackages[0];
 
@@ -341,11 +355,7 @@ const Menu = () => {
                                         </li>
                                         <li className="flex items-start text-dark-green">
                                             <Check size={18} className="text-luxury-gold mr-3 mt-1 flex-shrink-0" />
-                                            <span>Premium Bone China Crockery</span>
-                                        </li>
-                                        <li className="flex items-start text-dark-green">
-                                            <Check size={18} className="text-luxury-gold mr-3 mt-1 flex-shrink-0" />
-                                            <span>Welcome Drinks Served</span>
+                                            <span>Bone China Crockery</span>
                                         </li>
                                     </ul>
 
@@ -748,51 +758,51 @@ const Menu = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pt-24 pb-8 bg-black/60 backdrop-blur-sm overflow-y-auto"
+                            className="fixed inset-0 z-[9999] flex items-start justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto"
                         >
                             <motion.div
                                 initial={{ scale: 0.95, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 exit={{ scale: 0.95, opacity: 0 }}
-                                className="bg-white rounded-[2rem] p-8 md:p-10 max-w-md w-full shadow-2xl relative my-auto"
+                                className="bg-white rounded-[2rem] p-6 md:p-8 max-w-md w-full shadow-2xl relative mt-24 mb-12"
                             >
                                 <button
                                     onClick={() => setIsFormOpen(false)}
-                                    className="absolute top-8 right-8 text-gray-400 hover:text-gray-800 transition-colors z-10"
+                                    className="absolute top-6 right-6 text-gray-400 hover:text-gray-800 transition-colors"
                                 >
                                     <X size={24} />
                                 </button>
 
-                                <div className="mb-8">
-                                    <h3 className="text-2xl md:text-3xl font-bold text-dark-green mb-3">Event Details</h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed">Please provide your details so we can assist you better and finalize your menu.</p>
+                                <div className="pt-2">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-dark-green mb-2">Event Details</h3>
+                                    <p className="text-gray-500 mb-8 text-sm leading-relaxed">Please provide your details so we can assist you better.</p>
                                 </div>
 
-                                <form onSubmit={submitEnquiry} className="space-y-4">
+                                <form onSubmit={submitEnquiry} className="space-y-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">Name *</label>
                                         <input required type="text" name="name" value={formData.name} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="Your Name" />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">Phone *</label>
                                         <input required type="tel" name="phone" value={formData.phone} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="Your Phone Number" />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Event Date *</label>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">Event Date *</label>
                                         <input required type="date" name="date" value={formData.date} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" />
                                     </div>
-                                    <div className="grid grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-2 gap-6">
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-1">Guests</label>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">Guests</label>
                                             <input type="number" name="guests" value={formData.guests} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="E.g. 200" />
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">Location</label>
                                             <input type="text" name="location" value={formData.location} onChange={handleFormChange} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-dark-green focus:border-dark-green transition-all" placeholder="City / Area" />
                                         </div>
                                     </div>
 
-                                    <button type="submit" className="w-full mt-6 py-4 bg-dark-green text-luxury-gold font-bold text-lg rounded-xl shadow-lg hover:bg-[#1a3826] transition-colors flex items-center justify-center gap-2">
+                                    <button type="submit" className="w-full mt-4 py-4 bg-dark-green text-luxury-gold font-bold text-lg rounded-xl shadow-lg hover:bg-[#1a3826] transition-colors flex items-center justify-center gap-2">
                                         <ShoppingBag size={20} />
                                         Send to WhatsApp
                                     </button>

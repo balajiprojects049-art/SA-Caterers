@@ -71,7 +71,7 @@ const Contact = () => {
                                     </div>
                                     <div className="flex flex-col">
                                         <h3 className="font-bold text-lg text-white tracking-wide">Phone Number</h3>
-                                        <p className="text-gray-300 font-light text-sm mt-1">8555969207</p>
+                                        <p className="text-gray-300 font-light text-sm mt-1">91 90309 27239 /+91 88010 02808</p>
                                     </div>
                                 </motion.div>
 
