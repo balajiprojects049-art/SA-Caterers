@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza, X, Plus, PenLine } from 'lucide-react';
+import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza, X, Plus, PenLine, Leaf } from 'lucide-react';
 import BackgroundTexture from '../components/BackgroundTexture';
 import { menuPackages } from '../data/menuData';
 import { cn } from '../lib/utils';
@@ -23,7 +24,22 @@ const getCategoryIcon = (categoryName) => {
 };
 
 const Menu = () => {
+    const location = useLocation();
     const [activeTab, setActiveTab] = useState(menuPackages[0].id);
+
+    useEffect(() => {
+        const queryParams = new URLSearchParams(location.search);
+        if (queryParams.get('tab') === 'premium') {
+            setActiveTab('premium');
+        } else {
+            // Optional: Reset to default if no tab parameter or if returning to normal /menu
+            const currentTabMatchesPackages = menuPackages.some(p => p.id === activeTab);
+            if (!currentTabMatchesPackages && !queryParams.get('tab')) {
+                setActiveTab(menuPackages[0].id);
+            }
+        }
+    }, [location.search]);
+    const [premiumDiet, setPremiumDiet] = useState('vegetarian');
     const [selectedItems, setSelectedItems] = useState([]);
     const [otherInputs, setOtherInputs] = useState({}); // { [categoryName]: { isOpen: bool, value: string } }
     const [isFormOpen, setIsFormOpen] = useState(false);
@@ -188,10 +204,48 @@ const Menu = () => {
                             <div className="text-center mb-16">
                                 <h1 className="text-4xl md:text-6xl font-bold text-dark-green mb-4 drop-shadow-sm">Premium Service Tiers</h1>
                                 <div className="w-24 h-1 bg-luxury-gold mx-auto mb-6 rounded-full opacity-80"></div>
-                                <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">Choose the perfect service level for your special occasion.</p>
+                                <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-8">Choose the perfect service level for your special occasion.</p>
+
+                                <div className="inline-flex items-center p-1.5 bg-white rounded-full shadow-md border border-gray-100 mb-8">
+                                    <button
+                                        onClick={() => setPremiumDiet('vegetarian')}
+                                        className={cn(
+                                            "flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 text-[15px]",
+                                            premiumDiet === 'vegetarian'
+                                                ? "bg-[#8b5e34] text-white shadow-sm"
+                                                : "text-gray-600 hover:text-[#8b5e34]"
+                                        )}
+                                    >
+                                        <Leaf size={18} />
+                                        <span>Vegetarian</span>
+                                    </button>
+                                    <button
+                                        onClick={() => setPremiumDiet('non-vegetarian')}
+                                        className={cn(
+                                            "flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 text-[15px]",
+                                            premiumDiet === 'non-vegetarian'
+                                                ? "bg-red-600 text-white shadow-sm"
+                                                : "text-red-500 hover:bg-red-50"
+                                        )}
+                                    >
+                                        <Drumstick size={18} />
+                                        <span>Non-Vegetarian</span>
+                                    </button>
+                                </div>
+
+                                <div className="mt-10 pb-2">
+                                    <motion.h3
+                                        key={premiumDiet}
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className={`text-2xl md:text-3xl font-bold uppercase tracking-wider ${premiumDiet === 'vegetarian' ? 'text-[#8b5e34]' : 'text-red-600'}`}
+                                    >
+                                        {premiumDiet === 'vegetarian' ? 'Vegetarian Menu' : 'Non-Vegetarian Menu'}
+                                    </motion.h3>
+                                </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                                 {/* Silver Plan */}
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
@@ -202,8 +256,10 @@ const Menu = () => {
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-gray-100 rounded-bl-[100%] -mr-8 -mt-8 opacity-50 group-hover:scale-110 transition-transform"></div>
                                     <h3 className="text-3xl font-bold text-gray-800 mb-2">Silver</h3>
                                     <p className="text-gray-500 mb-6 text-sm font-medium tracking-wide uppercase">Essential Catering</p>
-                                    <div className="w-12 h-1 bg-gray-300 mb-8"></div>
-                                    <ul className="space-y-4 mb-8">
+                                    <div className="w-12 h-1 bg-gray-300 mb-6"></div>
+
+                                    <h4 className="font-bold text-gray-800 mb-4">Service Highlights</h4>
+                                    <ul className="space-y-4 mb-6">
                                         <li className="flex items-start text-gray-600">
                                             <Check size={18} className="text-gray-400 mr-3 mt-1 flex-shrink-0" />
                                             <span>Standard Buffet Setup</span>
@@ -216,13 +272,23 @@ const Menu = () => {
                                             <Check size={18} className="text-gray-400 mr-3 mt-1 flex-shrink-0" />
                                             <span>Basic Cutlery & Crockery</span>
                                         </li>
-                                        <li className="flex items-start text-gray-600">
-                                            <Check size={18} className="text-gray-400 mr-3 mt-1 flex-shrink-0" />
-                                            <span>Drinking Water Bottles</span>
-                                        </li>
                                     </ul>
-                                    <button className="w-full py-3 border-2 border-gray-800 text-gray-800 font-bold rounded-full hover:bg-gray-800 hover:text-white transition-colors">
-                                        Select Silver
+
+                                    <h4 className="font-bold text-gray-800 mb-4 pt-4 border-t border-gray-100">{premiumDiet === 'vegetarian' ? 'Vegetarian Menu' : 'Non-Vegetarian Menu'}</h4>
+                                    <ul className="space-y-4 mb-8">
+                                        {(premiumDiet === 'vegetarian' ? [
+                                            'Sweet', 'Hot', 'Special Rice/Biryani', 'Raitha', 'South Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'White Rice', 'Curd', 'Papad'
+                                        ] : [
+                                            'Sweet', 'Hot', 'Roti(min 100 Members)', 'plain/Chicken Biryani(Chicken fry/MuttonCurry--Dum Biryani(Mutton Curry))', 'Raitha', 'South Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'White Rice', 'Curd', 'Papad', 'Chicken Fry', 'Mutton Curry'
+                                        ]).map((item, idx) => (
+                                            <li key={idx} className="flex items-start text-gray-700">
+                                                <Check size={18} className="text-green-500 mr-3 mt-1 flex-shrink-0" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors">
+                                        Choose Plan
                                     </button>
                                 </motion.div>
 
@@ -231,14 +297,16 @@ const Menu = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2 }}
-                                    className="bg-[#FFFDF5] rounded-[2rem] p-8 border border-luxury-gold shadow-[0_20px_50px_-12px_rgba(212,175,55,0.25)] relative overflow-hidden transform md:-translate-y-4 md:h-[calc(100%+2rem)] flex flex-col justify-center group"
+                                    className="bg-[#FFFDF5] rounded-[2rem] p-8 border border-luxury-gold shadow-[0_20px_50px_-12px_rgba(212,175,55,0.25)] relative overflow-hidden transform md:-translate-y-4 md:h-[calc(100%+2rem)] flex flex-col group"
                                 >
                                     <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-yellow-300 via-luxury-gold to-yellow-300"></div>
                                     <div className="absolute top-4 right-4 bg-luxury-gold text-dark-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Popular</div>
                                     <h3 className="text-4xl font-bold text-dark-green mb-2">Gold</h3>
                                     <p className="text-luxury-gold mb-6 text-sm font-bold tracking-wide uppercase">Premium Experience</p>
-                                    <div className="w-12 h-1 bg-luxury-gold mb-8"></div>
-                                    <ul className="space-y-4 mb-8">
+                                    <div className="w-12 h-1 bg-luxury-gold mb-6"></div>
+
+                                    <h4 className="font-bold text-dark-green mb-4">Service Highlights</h4>
+                                    <ul className="space-y-4 mb-6">
                                         <li className="flex items-start text-dark-green">
                                             <Check size={18} className="text-luxury-gold mr-3 mt-1 flex-shrink-0" />
                                             <span>Grand Buffet Display</span>
@@ -255,13 +323,69 @@ const Menu = () => {
                                             <Check size={18} className="text-luxury-gold mr-3 mt-1 flex-shrink-0" />
                                             <span>Welcome Drinks Served</span>
                                         </li>
-                                        <li className="flex items-start text-dark-green">
-                                            <Check size={18} className="text-luxury-gold mr-3 mt-1 flex-shrink-0" />
-                                            <span>Live Food Counters</span>
+                                    </ul>
+
+                                    <h4 className="font-bold text-dark-green mb-4 pt-4 border-t border-luxury-gold/30">{premiumDiet === 'vegetarian' ? 'Vegetarian Menu' : 'Non-Vegetarian Menu'}</h4>
+                                    <ul className="space-y-4 mb-8">
+                                        {(premiumDiet === 'vegetarian' ? [
+                                            'Sweet', 'Hot', 'Roti(Min 100 Members)', 'Special Rice/Biryani', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad'
+                                        ] : [
+                                            'Sweet', 'Hot', 'Roti(min 100 Members)', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'White Rice', 'Curd', 'Papad', 'Fish Boneless fry', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'
+                                        ]).map((item, idx) => (
+                                            <li key={idx} className="flex items-start text-gray-800">
+                                                <Check size={18} className="text-green-500 mr-3 mt-1 flex-shrink-0" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden">
+                                        <span className="relative z-10">Choose Plan</span>
+                                    </button>
+                                </motion.div>
+
+                                {/* Diamond Plan */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.25 }}
+                                    className="bg-[#dce9ff] rounded-[2rem] p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                                >
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-[100%] -mr-8 -mt-8 opacity-50 group-hover:scale-110 transition-transform"></div>
+                                    <h3 className="text-4xl font-bold text-[#223b7b] mb-2">Diamond</h3>
+                                    <p className="text-blue-600 mb-6 text-sm font-bold tracking-wide uppercase">Elite Catering</p>
+                                    <div className="w-12 h-1 bg-[#223b7b] mb-6"></div>
+
+                                    <h4 className="font-bold text-[#223b7b] mb-4">Service Highlights</h4>
+                                    <ul className="space-y-4 mb-6">
+                                        <li className="flex items-start text-gray-700">
+                                            <Check size={18} className="text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                                            <span>Elite Buffet Display</span>
+                                        </li>
+                                        <li className="flex items-start text-gray-700">
+                                            <Check size={18} className="text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                                            <span>Dedicated Attendants</span>
+                                        </li>
+                                        <li className="flex items-start text-gray-700">
+                                            <Check size={18} className="text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                                            <span>Premium Cutlery</span>
                                         </li>
                                     </ul>
-                                    <button className="w-full py-4 bg-luxury-gold text-dark-green font-bold rounded-full shadow-lg hover:bg-[#d6a54e] transition-colors relative overflow-hidden">
-                                        <span className="relative z-10">Select Gold</span>
+
+                                    <h4 className="font-bold text-[#223b7b] mb-4 pt-4 border-t border-blue-200">{premiumDiet === 'vegetarian' ? 'Vegetarian Menu' : 'Non-Vegetarian Menu'}</h4>
+                                    <ul className="space-y-4 mb-8">
+                                        {(premiumDiet === 'vegetarian' ? [
+                                            'Sweet', 'Hot', 'Roti(Min 100 Members)', 'Special Rice/Biryani', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Ice Cream'
+                                        ] : [
+                                            'Sweet', 'Hot', 'Roti(min 100 Members)', 'Veg Biryani/Pulao', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Sweet Pan', 'Fish/Prawans (fry/Curry)', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'
+                                        ]).map((item, idx) => (
+                                            <li key={idx} className="flex items-start text-gray-800">
+                                                <Check size={18} className="text-green-500 mr-3 mt-1 flex-shrink-0" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden">
+                                        <span className="relative z-10">Choose Plan</span>
                                     </button>
                                 </motion.div>
 
@@ -270,36 +394,52 @@ const Menu = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.3 }}
-                                    className="bg-white rounded-[2rem] p-8 border border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                                    className="bg-[#e2e8f0] rounded-[2rem] p-8 border border-slate-300 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
                                 >
-                                    <div className="absolute top-0 right-0 w-40 h-40 bg-gray-900 rounded-bl-[100%] -mr-10 -mt-10 opacity-5 group-hover:scale-110 transition-transform"></div>
-                                    <h3 className="text-3xl font-bold text-gray-900 mb-2">Platinum</h3>
-                                    <p className="text-gray-500 mb-6 text-sm font-medium tracking-wide uppercase">Royal Luxury</p>
-                                    <div className="w-12 h-1 bg-gray-800 mb-8"></div>
-                                    <ul className="space-y-4 mb-8">
-                                        <li className="flex items-start text-gray-700">
-                                            <Check size={18} className="text-gray-600 mr-3 mt-1 flex-shrink-0" />
+                                    <div className="absolute top-0 right-0 w-40 h-40 bg-slate-400 rounded-bl-[100%] -mr-10 -mt-10 opacity-10 group-hover:scale-110 transition-transform"></div>
+                                    <h3 className="text-4xl font-bold text-[#1e293b] mb-2">Platinum</h3>
+                                    <p className="text-slate-600 mb-6 text-sm font-bold tracking-wide uppercase">Royal Luxury</p>
+                                    <div className="w-12 h-1 bg-[#1e293b] mb-6"></div>
+
+                                    <h4 className="font-bold text-[#1e293b] mb-4">Service Highlights</h4>
+                                    <ul className="space-y-4 mb-6">
+                                        <li className="flex items-start text-slate-700">
+                                            <Check size={18} className="text-slate-500 mr-3 mt-1 flex-shrink-0" />
                                             <span>Exquisite Themed Setup</span>
                                         </li>
-                                        <li className="flex items-start text-gray-700">
-                                            <Check size={18} className="text-gray-600 mr-3 mt-1 flex-shrink-0" />
+                                        <li className="flex items-start text-slate-700">
+                                            <Check size={18} className="text-slate-500 mr-3 mt-1 flex-shrink-0" />
                                             <span>VVIP Service Protocol</span>
                                         </li>
-                                        <li className="flex items-start text-gray-700">
-                                            <Check size={18} className="text-gray-600 mr-3 mt-1 flex-shrink-0" />
+                                        <li className="flex items-start text-slate-700">
+                                            <Check size={18} className="text-slate-500 mr-3 mt-1 flex-shrink-0" />
                                             <span>Imported Premium Glassware</span>
                                         </li>
-                                        <li className="flex items-start text-gray-700">
-                                            <Check size={18} className="text-gray-600 mr-3 mt-1 flex-shrink-0" />
+                                        <li className="flex items-start text-slate-700">
+                                            <Check size={18} className="text-slate-500 mr-3 mt-1 flex-shrink-0" />
                                             <span>Multiple Live Stations</span>
                                         </li>
-                                        <li className="flex items-start text-gray-700">
-                                            <Check size={18} className="text-gray-600 mr-3 mt-1 flex-shrink-0" />
+                                        <li className="flex items-start text-slate-700">
+                                            <Check size={18} className="text-slate-500 mr-3 mt-1 flex-shrink-0" />
                                             <span>Floral Decor for Tables</span>
                                         </li>
                                     </ul>
-                                    <button className="w-full py-3 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 transition-colors">
-                                        Select Platinum
+
+                                    <h4 className="font-bold text-[#1e293b] mb-4 pt-4 border-t border-slate-300">{premiumDiet === 'vegetarian' ? 'Vegetarian Menu' : 'Non-Vegetarian Menu'}</h4>
+                                    <ul className="space-y-4 mb-8">
+                                        {(premiumDiet === 'vegetarian' ? [
+                                            'Welcome Drink', 'Veg Starter', 'Sweet', 'Hot', 'Roti(Min 100 Members)', 'Special Rice', 'Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'podulu 2 Types', 'Ghee', 'Sweet pan', 'Water Bottle', 'Ice Cream'
+                                        ] : [
+                                            'Welcome Drink', 'Veg Starter', 'Non Veg Starter', 'Sweet', 'Hot', 'Roti(min 100 Members)', 'Veg Biryani/Pulao', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Sweet Pan', 'Podulu 2 Types', 'Ghee', 'Water Bottles', 'Fish/Prawans (fry/Curry)', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'
+                                        ]).map((item, idx) => (
+                                            <li key={idx} className="flex items-start text-gray-800">
+                                                <Check size={18} className="text-green-500 mr-3 mt-1 flex-shrink-0" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden">
+                                        <span className="relative z-10">Choose Plan</span>
                                     </button>
                                 </motion.div>
                             </div>

@@ -10,6 +10,7 @@ const WHITE = '#ffffff';
 const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },
+    { name: 'Premium Plans', path: '/menu?tab=premium' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
 ];

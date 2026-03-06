@@ -328,6 +328,9 @@ const Home = () => {
                 </div>
                 <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide px-4">
                     {[
+                        "/captured-moment-1.jpeg",
+                        "/captured-moment-2.jpeg",
+                        "/captured-moment-3.jpeg",
                         "/ap_hyd_gallery_1_1772218641518.png",
                         "/gallery_moment_1_1772218443129.png",
                         "/ap_hyd_gallery_2_1772218656042.png",

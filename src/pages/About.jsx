@@ -89,7 +89,7 @@ const About = () => {
                         >
                             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-2xl">
                                 <img
-                                    src="/about_chef.png"
+                                    src="/veg-1.png"
                                     alt="SA Caterers Master Chef"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                                 />
