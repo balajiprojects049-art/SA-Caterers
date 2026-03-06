@@ -43,6 +43,14 @@ export const menuPackages = [
             {
                 category: 'Indian Breads',
                 items: ['Palak Poori', 'Methi Poori', 'Butter Naan', 'Rumali Roti', 'Paneer Kulcha', 'Masala Kulcha', 'Tandoor Roti', 'Lacha Paratha', 'Phulka']
+            },
+            {
+                category: 'Ice Cream Parlour',
+                items: ['Vanilla', 'Strawberry', 'Butterscotch', 'Chocolate', 'Mango', 'Sitaphal', 'Real Fruit Ice Cream']
+            },
+            {
+                category: 'Pan Corner',
+                items: ['Sweet Pan', 'Chocolate Pan', 'Silver Pan', 'Meenakshi Pan', 'Laddu Pan', 'Special Mixed Pan']
             }
         ]
     },
@@ -146,8 +154,12 @@ export const menuPackages = [
                 items: ['Khova Gulab Jamun', 'Bobatlu', 'Purnam Burelu', 'Laddu', 'Gajar Ka Halwa', 'Kesari Halwa', 'Double Ka Meetha', 'Pineapple Kheer', 'Kaddu Ki Kheer', 'Kurbani Sweet', 'Fruit Salad', 'Fruit Cream']
             },
             {
-                category: 'Ice Cream',
+                category: 'Ice Cream Parlour',
                 items: ['Vanilla', 'Strawberry', 'Butterscotch', 'Others']
+            },
+            {
+                category: 'Pan Corner',
+                items: ['Sweet Pan', 'Meenakshi Pan', 'Kalkata Pan']
             },
             {
                 category: 'Beverages',
@@ -201,8 +213,12 @@ export const menuPackages = [
                 items: ['Khova Gulab Jamun', 'Bobatlu', 'Purnam Burelu', 'Kaddu Ki Kheer', 'Fruit Cream', 'Fruit Salad', 'Pineapple Sweet', 'Gajar Ka Halwa', 'Double Ka Meetha']
             },
             {
-                category: 'Ice Cream',
+                category: 'Ice Cream Parlour',
                 items: ['Vanilla', 'Strawberry', 'Butterscotch', 'Others']
+            },
+            {
+                category: 'Pan Corner',
+                items: ['Sweet Pan', 'Meenakshi Pan', 'Kalkata Pan']
             },
             {
                 category: 'Beverages',

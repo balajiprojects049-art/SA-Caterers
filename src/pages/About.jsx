@@ -36,7 +36,7 @@ const About = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-sm mb-4 block">Welcome to SA Caterers</span>
+                        <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-sm mb-4 block"> Welcome to Sri Aditya</span>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-xl">
                             Our Legacy
                         </h1>

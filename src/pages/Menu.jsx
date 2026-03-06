@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza, X, Plus, PenLine, Leaf } from 'lucide-react';
+import { Check, Info, ShoppingBag, CupSoda, Coffee, Dessert, UtensilsCrossed, Soup, ChefHat, CookingPot, Wine, Drumstick, Fish, Flame, Store, Pizza, X, Plus, PenLine, Leaf, IceCream } from 'lucide-react';
 import BackgroundTexture from '../components/BackgroundTexture';
 import { menuPackages } from '../data/menuData';
 import { cn } from '../lib/utils';
@@ -20,6 +20,8 @@ const getCategoryIcon = (categoryName) => {
     if (lower.includes('fish') || lower.includes('prawn')) return <Fish size={28} strokeWidth={1.5} />;
     if (lower.includes('alcohol') || lower.includes('drink')) return <Wine size={28} strokeWidth={1.5} />;
     if (lower.includes('starter') || lower.includes('fry') || lower.includes('snack')) return <Flame size={28} strokeWidth={1.5} />;
+    if (lower.includes('ice cream')) return <IceCream size={28} strokeWidth={1.5} />;
+    if (lower.includes('pan')) return <Leaf size={28} strokeWidth={1.5} />;
     return <ChefHat size={28} strokeWidth={1.5} />;
 };
 
