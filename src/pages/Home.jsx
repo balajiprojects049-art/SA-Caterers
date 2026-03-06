@@ -288,7 +288,7 @@ const Home = () => {
                         {[
                             { title: "Full Veg Menu", img: "/Veg-Menu.png" },
                             { title: "Full Non Veg Menu", img: "/NON-Veg.jpg" },
-                            { title: "Veg Below 200", img: "/Veg 1.png" },
+                            { title: "Veg Below 200", img: "/Veg-Menu.png" },
                             { title: "Non Veg Below 200", img: "/Non Veg 1.png" },
                             //{ title: "Regular Non Veg Menu", img: "https://images.unsplash.com/photo-1570773950664-585d8527a20c?auto=format&fit=crop&q=80&w=600" }
                         ].map((menu, i) => (
