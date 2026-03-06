@@ -225,7 +225,7 @@ const Navbar = () => {
                                 padding: '20px 24px',
                                 borderTop: '1px solid rgba(255,255,255,0.1)',
                             }}>
-                                <a href="https://instagram.com" target="_blank" rel="noreferrer" style={{ color: WHITE }}>
+                                <a href="https://www.instagram.com/sa.hyderabadcaterers?igsh=emp0ajZ6c3JqMmtm&utm_source=qr" target="_blank" rel="noreferrer" style={{ color: WHITE }}>
                                     <Instagram size={22} />
                                 </a>
                                 <a href="tel:9030927239" style={{ color: WHITE }}>

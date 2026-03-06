@@ -41,7 +41,7 @@ const Footer = () => {
                             Elevating your celebrations with the authentic, royal taste of Hyderabad. We bring passion, tradition, and perfection to every plate we serve.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-luxury-gold hover:text-dark-green hover:border-luxury-gold transition-all duration-300 group shadow-lg">
+                            <a href="https://www.instagram.com/sa.hyderabadcaterers?igsh=emp0ajZ6c3JqMmtm&utm_source=qr" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-luxury-gold hover:text-dark-green hover:border-luxury-gold transition-all duration-300 group shadow-lg">
                                 <Instagram size={18} className="text-gray-300 group-hover:text-dark-green transition-colors" />
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-luxury-gold hover:text-dark-green hover:border-luxury-gold transition-all duration-300 group shadow-lg">
