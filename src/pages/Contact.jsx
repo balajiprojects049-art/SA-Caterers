@@ -230,10 +230,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="w-full rounded-[3rem] overflow-hidden shadow-2xl relative border-8 border-white bg-white h-[450px]"
                 >
-                    <div className="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
-                        <h3 className="font-bold text-dark-green text-xl mb-1">Our Kitchen Base</h3>
-                        <p className="text-gray-500 font-light text-sm">Open 9AM - 9PM</p>
-                    </div>
+
 
                     <iframe
                         title="SA Caterers Location map"
