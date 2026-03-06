@@ -458,18 +458,30 @@ const Menu = () => {
                                     <h4 className="font-bold text-[#1e293b] mb-4 pt-4 border-t border-slate-300">{premiumDiet === 'vegetarian' ? 'Vegetarian Menu' : 'Non-Vegetarian Menu'}</h4>
                                     <ul className="space-y-4 mb-8">
                                         {(premiumDiet === 'vegetarian' ? [
-                                            'Welcome Drink', 'Veg Starter', 'Sweet', 'Hot', 'Roti(Min 100 Members)', 'Special Rice', 'Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'podulu 2 Types', 'Ghee', 'Sweet pan', 'Water Bottle', 'Ice Cream'
+                                            'Mocktail Counter', 'Welcome Snacks (Veg) --- Three', 'Welcome Snacks (Veg) --- Four', 'Salad Live', 'Chat --- Five', 'Chinese --- Five', 'Italian --- Three', 'Panjabi Dhaba (or) South Indian --- Four', "Roti's --- Four", 'North Indian Curries --- Two', 'South Indian Curries --- Two', 'Fry items --- One', 'Biryani --- One', 'Flever Rice --- One', 'Dal Item --- Two', 'Sambar or Pappucharu --- One', 'Rasam --- One', 'Sweet Mela (for Head 3 Pices)', 'Fresh Fruit Counter --- 5+5', 'Pan Counter', '--- Common Items ---', 'Plain Rice', 'Curd', 'Ghee', 'Sweet Pan', 'Papad', 'Pickles', 'Vadiyalu', 'Raitha', 'Green Salad', 'Uramirapakayalu', '200 ML Water Bottle'
                                         ] : [
                                             'Welcome Drink', 'Veg Starter', 'Non Veg Starter', 'Sweet', 'Hot', 'Roti(min 100 Members)', 'Veg Biryani/Pulao', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Sweet Pan', 'Podulu 2 Types', 'Ghee', 'Water Bottles', 'Fish/Prawans (fry/Curry)', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'
-                                        ]).map((item, idx) => (
-                                            <li key={idx} className="flex items-start text-gray-800">
-                                                <Check size={18} className="text-green-500 mr-3 mt-1 flex-shrink-0" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
+                                        ]).map((item, idx) => {
+                                            const isHeader = item.startsWith('---');
+                                            const parts = item.split(' --- ');
+                                            return (
+                                                <li key={idx} className={`flex items-start text-gray-800 ${isHeader ? 'mt-4' : ''}`}>
+                                                    {isHeader ? (
+                                                        <span className="font-bold text-dark-green border-b border-luxury-gold/30 w-full text-center pb-1 mb-2">
+                                                            {item.replace(/---/g, '').trim()}
+                                                        </span>
+                                                    ) : (
+                                                        <div className="flex justify-between w-full items-center">
+                                                            <span className="font-medium">{parts[0]}</span>
+                                                            {parts[1] && <span className="text-luxury-gold font-bold text-sm bg-luxury-gold/5 px-3 py-0.5 rounded-full border border-luxury-gold/20">{parts[1]}</span>}
+                                                        </div>
+                                                    )}
+                                                </li>
+                                            );
+                                        })}
                                     </ul>
                                     <button
-                                        onClick={() => handlePremiumPlanSelect('Platinum', premiumDiet === 'vegetarian' ? ['Welcome Drink', 'Veg Starter', 'Sweet', 'Hot', 'Roti', 'Special Rice', 'Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'podulu 2 Types', 'Ghee', 'Sweet pan', 'Water Bottle', 'Ice Cream'] : ['Welcome Drink', 'Veg Starter', 'Non Veg Starter', 'Sweet', 'Hot', 'Roti', 'Veg Biryani/Pulao', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Sweet Pan', 'Podulu 2 Types', 'Ghee', 'Water Bottles', 'Fish/Prawans (fry/Curry)', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'])}
+                                        onClick={() => handlePremiumPlanSelect('Platinum', premiumDiet === 'vegetarian' ? ['Mocktail Counter', 'Welcome Snacks (Veg) --- Three', 'Welcome Snacks (Veg) --- Four', 'Salad Live', 'Chat --- Five', 'Chinese --- Five', 'Italian --- Three', 'Panjabi Dhaba (or) South Indian --- Four', "Roti's --- Four", 'North Indian Curries --- Two', 'South Indian Curries --- Two', 'Fry items --- One', 'Biryani --- One', 'Flever Rice --- One', 'Dal Item --- Two', 'Sambar or Pappucharu --- One', 'Rasam --- One', 'Sweet Mela (for Head 3 Pieces)', 'Fresh Fruit Counter --- 5+5', 'Pan Counter', 'Plain Rice', 'Curd', 'Ghee', 'Sweet Pan', 'Papad', 'Pickles', 'Vadiyalu', 'Raitha', 'Green Salad', 'Uramirapakayalu', '200 ML Water Bottle'] : ['Welcome Drink', 'Veg Starter', 'Non Veg Starter', 'Sweet', 'Hot', 'Roti', 'Veg Biryani/Pulao', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Sweet Pan', 'Podulu 2 Types', 'Ghee', 'Water Bottles', 'Fish/Prawans (fry/Curry)', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'])}
                                         className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden"
                                     >
                                         <span className="relative z-10">Choose Plan</span>
