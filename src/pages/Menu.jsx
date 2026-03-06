@@ -473,7 +473,7 @@ const Menu = () => {
                                                     ) : (
                                                         <div className="flex justify-between w-full items-center">
                                                             <span className="font-medium">{parts[0]}</span>
-                                                            {parts[1] && <span className="text-luxury-gold font-bold text-sm bg-luxury-gold/5 px-3 py-0.5 rounded-full border border-luxury-gold/20">{parts[1]}</span>}
+                                                            {parts[1] && <span className="text-slate-900 font-semibold text-sm">({parts[1]})</span>}
                                                         </div>
                                                     )}
                                                 </li>
