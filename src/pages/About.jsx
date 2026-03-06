@@ -383,8 +383,8 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20">
                         {[
                             { icon: <Phone size={28} />, title: "Call Us", desc: "8801002808 / 9030927239", link: "tel:+919030927239" },
-                            { icon: <Mail size={28} />, title: "Email", desc: "sa.hyderabadcaterers@gmail.com", link: "mailto:[sa.hyderabadcaterers@gmail.com]" },
-                            { icon: <MapPin size={28} />, title: "Location", desc: "Plot No. 49, 1st Floor, P & T Colony, Karkhana, Secunderabad, Telangana - 500009", link: null }
+                            { icon: <Mail size={28} />, title: "Email", desc: "sa.hyderabadcaterers@gmail.com", link: "mailto:sa.hyderabadcaterers@gmail.com" },
+                            { icon: <MapPin size={28} />, title: "Location", desc: "Plot number 4, RTC Colony, Tirumalgherry, Secunderabad, 500015", link: null }
                         ].map((item, idx) => (
                             <div
                                 key={idx}
@@ -395,7 +395,7 @@ const About = () => {
                                     {item.icon}
                                 </div>
                                 <h3 className="text-2xl font-bold mb-2 text-white">{item.title}</h3>
-                                <p className="text-gray-400 font-light">{item.desc}</p>
+                                <p className="text-gray-400 font-light text-center">{item.desc}</p>
                             </div>
                         ))}
                     </div>
