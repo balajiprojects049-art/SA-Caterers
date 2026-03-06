@@ -754,17 +754,19 @@ const Menu = () => {
                                 initial={{ scale: 0.95, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 exit={{ scale: 0.95, opacity: 0 }}
-                                className="bg-white rounded-[2rem] p-6 md:p-8 max-w-md w-full shadow-2xl relative my-auto"
+                                className="bg-white rounded-[2rem] p-8 md:p-10 max-w-md w-full shadow-2xl relative my-auto"
                             >
                                 <button
                                     onClick={() => setIsFormOpen(false)}
-                                    className="absolute top-6 right-6 text-gray-400 hover:text-gray-800 transition-colors"
+                                    className="absolute top-8 right-8 text-gray-400 hover:text-gray-800 transition-colors z-10"
                                 >
                                     <X size={24} />
                                 </button>
 
-                                <h3 className="text-2xl md:text-3xl font-bold text-dark-green mb-2">Event Details</h3>
-                                <p className="text-gray-500 mb-6 text-sm">Please provide your details so we can assist you better.</p>
+                                <div className="mb-8">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-dark-green mb-3">Event Details</h3>
+                                    <p className="text-gray-500 text-sm leading-relaxed">Please provide your details so we can assist you better and finalize your menu.</p>
+                                </div>
 
                                 <form onSubmit={submitEnquiry} className="space-y-4">
                                     <div>
