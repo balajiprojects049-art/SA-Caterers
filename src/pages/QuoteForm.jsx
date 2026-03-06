@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
     User, Phone, Calendar, Users, MapPin, Award,
-    MessageSquare, MessageCircle, PhoneCall, Instagram
+    MessageSquare, MessageCircle, PhoneCall, Instagram, Mail
 } from 'lucide-react';
 
 const EVENT_TYPES = [
@@ -277,13 +277,20 @@ const QuoteForm = () => {
                         <p className="text-center text-gray-400 text-sm mb-4">
                             Or connect with us
                         </p>
-                        <div className="flex justify-center gap-4">
+                        <div className="flex flex-wrap justify-center gap-4">
                             <a
                                 href="tel:+919030927239"
                                 className="flex items-center gap-2 border border-[#D4AF37] text-[#D4AF37] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#D4AF37]/10 transition-colors"
                             >
                                 <PhoneCall size={16} />
                                 Call
+                            </a>
+                            <a
+                                href="mailto:sa.hyderabadcaterers@gmail.com"
+                                className="flex items-center gap-2 border border-[#D4AF37] text-[#D4AF37] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#D4AF37]/10 transition-colors"
+                            >
+                                <Mail size={16} />
+                                Email
                             </a>
                             <a
                                 href="https://www.instagram.com/sa.hyderabadcaterers?igsh=emp0ajZ6c3JqMmtm&utm_source=qr"

@@ -75,13 +75,13 @@ const Contact = () => {
                                     </div>
                                 </motion.div>
 
-                                <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('mailto:shrithikcatering@gmail.com')}>
+                                <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('mailto:sa.hyderabadcaterers@gmail.com')}>
                                     <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mr-5 transition-colors duration-300 flex-shrink-0 shadow-md">
                                         <Mail size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
                                     <div className="flex flex-col">
                                         <h3 className="font-bold text-lg text-white tracking-wide">Email Address</h3>
-                                        <p className="text-gray-300 font-light text-sm mt-1">shrithikcatering@gmail.com</p>
+                                        <p className="text-gray-300 font-light text-sm mt-1">sa.hyderabadcaterers@gmail.com</p>
                                     </div>
                                 </motion.div>
                             </div>

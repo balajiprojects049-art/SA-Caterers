@@ -126,7 +126,7 @@ const Footer = () => {
                         <p className="text-gray-400 text-[14px] mb-4">
                             Subscribe to receive exclusive offers and seasonal menu updates.
                         </p>
-                        <form className="mb-8 relative h-[46px]" onSubmit={handleSubscribe}>
+                        <form className="mb-4 relative h-[46px]" onSubmit={handleSubscribe}>
                             {subscribed ? (
                                 <div className="absolute inset-0 bg-luxury-gold/20 border border-luxury-gold/50 rounded-full flex items-center px-5 text-sm text-luxury-gold backdrop-blur-sm animate-in fade-in duration-300">
                                     <Check size={18} className="mr-2" strokeWidth={3} />
@@ -151,6 +151,12 @@ const Footer = () => {
                                 </>
                             )}
                         </form>
+                        <div className="mb-8">
+                            <a href="mailto:sa.hyderabadcaterers@gmail.com" className="text-gray-500 hover:text-luxury-gold transition-colors text-[13px] flex items-center">
+                                <Mail size={14} className="mr-2" />
+                                sa.hyderabadcaterers@gmail.com
+                            </a>
+                        </div>
 
                         <div className="flex items-start">
                             <Clock className="text-luxury-gold mr-3 mt-1 flex-shrink-0" size={18} />
