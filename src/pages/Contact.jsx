@@ -55,7 +55,7 @@ const Contact = () => {
                             <h2 className="text-3xl font-black text-white mb-10 tracking-wide mt-56 lg:mt-64">Get in Touch</h2>
 
                             <div className="space-y-8 w-full">
-                                <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('https://maps.google.com')}>
+                                <motion.div whileHover={{ x: 3 }} className="flex items-center group cursor-pointer" onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=Plot+number+4+RTC+Colony+Tirumalgherry+Secunderabad+500015')}>
                                     <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mr-5 transition-colors duration-300 flex-shrink-0 shadow-md">
                                         <MapPin size={20} className="text-[#faba50] transition-colors group-hover:text-dark-green" />
                                     </div>
@@ -237,7 +237,7 @@ const Contact = () => {
 
                     <iframe
                         title="SA Caterers Location map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15224.28825838426!2d78.4900!3d17.4600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a67a6e60b21%3A0xe5f9b4f6b280148!2sTirumalgherry%2C%20Secunderabad%2C%20Telangana%20500015!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.729002848297!2d78.49737087462883!3d17.47268010034353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a5fb25f521f%3A0xdd5878ca634f4819!2s4%2C%20RTC%20Colony%2C%20Tirumalagiri%2C%20Secunderabad%2C%20Telangana%20500015!5e0!3m2!1sen!2sin!4v1772816265527!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
                         style={{ border: 0, filter: 'grayscale(0.3) saturate(0.8) contrast(1.1) brightness(1.05)', mixBlendMode: 'multiply' }}
