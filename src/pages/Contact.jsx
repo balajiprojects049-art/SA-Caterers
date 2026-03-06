@@ -61,7 +61,7 @@ const Contact = () => {
                                     </div>
                                     <div className="flex flex-col">
                                         <h3 className="font-bold text-lg text-white tracking-wide">Our Location</h3>
-                                        <p className="text-gray-300 font-light text-sm mt-1">Secunderabad Hyderabad</p>
+                                        <p className="text-gray-300 font-light text-sm mt-1">Plot number 4, RTC Colony, Tirumalgherry, Secunderabad - 500015</p>
                                     </div>
                                 </motion.div>
 
@@ -237,7 +237,7 @@ const Contact = () => {
 
                     <iframe
                         title="SA Caterers Location map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.071271708896!2d78.49887531487664!3d17.45610898803734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a67a6e60b21%3A0xe5f9b4f6b280148!2sSA%20Hyderabad%20Caterers!5e0!3m2!1sen!2sin!4v1677651234567!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15224.28825838426!2d78.4900!3d17.4600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a67a6e60b21%3A0xe5f9b4f6b280148!2sTirumalgherry%2C%20Secunderabad%2C%20Telangana%20500015!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
                         style={{ border: 0, filter: 'grayscale(0.3) saturate(0.8) contrast(1.1) brightness(1.05)', mixBlendMode: 'multiply' }}

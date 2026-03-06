@@ -44,6 +44,7 @@ const Menu = () => {
     const [otherInputs, setOtherInputs] = useState({}); // { [categoryName]: { isOpen: bool, value: string } }
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [formData, setFormData] = useState({ name: '', phone: '', date: '', location: '', guests: '' });
+    const [selectedPremiumPlan, setSelectedPremiumPlan] = useState(null); // { name: string, diet: string, items: string[] }
 
     const activePackage = menuPackages.find(p => p.id === activeTab) || menuPackages[0];
 
@@ -84,6 +85,16 @@ const Menu = () => {
             alert("Please select some items or add a custom request to enquire.");
             return;
         }
+        setSelectedPremiumPlan(null); // Reset premium plan if using standard selector
+        setIsFormOpen(true);
+    };
+
+    const handlePremiumPlanSelect = (planName, planItems) => {
+        setSelectedPremiumPlan({
+            name: planName,
+            diet: premiumDiet,
+            items: planItems
+        });
         setIsFormOpen(true);
     };
 
@@ -102,21 +113,29 @@ const Menu = () => {
         if (location) message += `� *Venue/Area:* ${location}\n\n`;
 
         message += `*MENU SELECTION*\n`;
-        message += `🏷️ *Package:* ${activePackage.label}\n`;
-        if (selectedItems.length > 0) {
-            message += `📋 *Items Selected (${selectedItems.length}):*\n`;
-            message += selectedItems.map(item => `   ▪ ${item}`).join('\n');
+        if (selectedPremiumPlan) {
+            message += `👑 *Premium Plan:* ${selectedPremiumPlan.name}\n`;
+            message += `🥗 *Diet:* ${selectedPremiumPlan.diet === 'vegetarian' ? 'Vegetarian' : 'Non-Vegetarian'}\n`;
+            message += `📋 *Included Items:*\n`;
+            message += selectedPremiumPlan.items.map(item => `   ▪ ${item}`).join('\n');
             message += `\n`;
-        }
+        } else {
+            message += `🏷️ *Package:* ${activePackage.label}\n`;
+            if (selectedItems.length > 0) {
+                message += `📋 *Items Selected (${selectedItems.length}):*\n`;
+                message += selectedItems.map(item => `   ▪ ${item}`).join('\n');
+                message += `\n`;
+            }
 
-        // Include any custom "Others" requests
-        const customRequests = Object.entries(otherInputs)
-            .filter(([, o]) => o.isOpen && o.value.trim() !== '')
-            .map(([cat, o]) => `   ▪ [${cat}] ${o.value.trim()}`);
-        if (customRequests.length > 0) {
-            message += `\n✏️ *Custom Requests (${customRequests.length}):*\n`;
-            message += customRequests.join('\n');
-            message += `\n`;
+            // Include any custom "Others" requests
+            const customRequests = Object.entries(otherInputs)
+                .filter(([, o]) => o.isOpen && o.value.trim() !== '')
+                .map(([cat, o]) => `   ▪ [${cat}] ${o.value.trim()}`);
+            if (customRequests.length > 0) {
+                message += `\n✏️ *Custom Requests (${customRequests.length}):*\n`;
+                message += customRequests.join('\n');
+                message += `\n`;
+            }
         }
 
         message += `\n---------------------------------------\n`;
@@ -287,7 +306,10 @@ const Menu = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors">
+                                    <button
+                                        onClick={() => handlePremiumPlanSelect('Silver', premiumDiet === 'vegetarian' ? ['Sweet', 'Hot', 'Special Rice/Biryani', 'Raitha', 'South Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'White Rice', 'Curd', 'Papad'] : ['Sweet', 'Hot', 'Roti', 'Biryani/Mutton Curry', 'Raitha', 'South Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'White Rice', 'Curd', 'Papad', 'Chicken Fry', 'Mutton Curry'])}
+                                        className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors"
+                                    >
                                         Choose Plan
                                     </button>
                                 </motion.div>
@@ -338,7 +360,10 @@ const Menu = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden">
+                                    <button
+                                        onClick={() => handlePremiumPlanSelect('Gold', premiumDiet === 'vegetarian' ? ['Sweet', 'Hot', 'Roti', 'Special Rice/Biryani', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad'] : ['Sweet', 'Hot', 'Roti', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'Fry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'White Rice', 'Curd', 'Papad', 'Fish Boneless fry', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'])}
+                                        className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden"
+                                    >
                                         <span className="relative z-10">Choose Plan</span>
                                     </button>
                                 </motion.div>
@@ -384,7 +409,10 @@ const Menu = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden">
+                                    <button
+                                        onClick={() => handlePremiumPlanSelect('Diamond', premiumDiet === 'vegetarian' ? ['Sweet', 'Hot', 'Roti', 'Special Rice/Biryani', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Ice Cream'] : ['Sweet', 'Hot', 'Roti', 'Veg Biryani/Pulao', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Sweet Pan', 'Fish/Prawans (fry/Curry)', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'])}
+                                        className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden"
+                                    >
                                         <span className="relative z-10">Choose Plan</span>
                                     </button>
                                 </motion.div>
@@ -438,7 +466,10 @@ const Menu = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden">
+                                    <button
+                                        onClick={() => handlePremiumPlanSelect('Platinum', premiumDiet === 'vegetarian' ? ['Welcome Drink', 'Veg Starter', 'Sweet', 'Hot', 'Roti', 'Special Rice', 'Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'podulu 2 Types', 'Ghee', 'Sweet pan', 'Water Bottle', 'Ice Cream'] : ['Welcome Drink', 'Veg Starter', 'Non Veg Starter', 'Sweet', 'Hot', 'Roti', 'Veg Biryani/Pulao', 'Non Veg Biryani/Pulao', 'Raitha', 'South Indian Curry', 'North Indian Curry', 'Veg Fry Item', 'Veg Dry Item', 'Pappu', 'Sambar', 'Roti Pachadi', 'Pickle', 'White Rice', 'Curd', 'Papad', 'Veg Salad', 'Sweet Soump', 'Sweet Pan', 'Podulu 2 Types', 'Ghee', 'Water Bottles', 'Fish/Prawans (fry/Curry)', 'Chicken Fry', 'Mutton Curry', 'Ice Cream'])}
+                                        className="w-full py-3 bg-[#8b5e34] text-[17px] text-white font-bold rounded-lg hover:bg-[#6e4928] transition-colors relative overflow-hidden"
+                                    >
                                         <span className="relative z-10">Choose Plan</span>
                                     </button>
                                 </motion.div>

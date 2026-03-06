@@ -103,7 +103,7 @@ const Footer = () => {
                                 <div className="w-8 h-8 rounded-full bg-luxury-gold/10 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
                                     <MapPin className="text-luxury-gold" size={16} />
                                 </div>
-                                <span className="text-gray-400 text-[15px] leading-relaxed">Plot No. 49, 1st Floor, P & T Colony, Karkhana, Secunderabad, Telangana - 500009</span>
+                                <span className="text-gray-400 text-[15px] leading-relaxed">Plot number 4, RTC Colony, Tirumalgherry, Secunderabad, 500015</span>
                             </li>
                             <li className="flex items-center">
                                 <div className="w-8 h-8 rounded-full bg-luxury-gold/10 flex items-center justify-center mr-4 flex-shrink-0">
